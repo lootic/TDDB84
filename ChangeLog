@@ -1,0 +1,21 @@
+2008-08-29  Mattias Eriksson  <mater@mina9.ida.liu.se>
+
+	* Lab1/index.html: Removed paragraph on setting parameters.
+
+2008-08-25  Mattias Eriksson  <mater@mina9.ida.liu.se>
+
+	* Lab4/lab4Source/AbstractShape.java: added abstract paint method.
+
+	* All: Added html files that can be viewed with appletviewer.
+	
+	* Lab3: Added a static lock to Snake. It should be used whenever
+	the body or bonus lists are accessed to avoid
+	ConcurrentModificationException. We should make a better solution
+	for this some day...
+
+	* Lab4: Fixed a bug where kids are added exponentially many times
+	in Square.java.
+
+	* Lab4: Fixed a few spelling errors.
+
+	* All: Removed class and ~-files from the archive.

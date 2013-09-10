@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+</head>
+<body>
+
+This is the package that contains the code base for the behavioral design patterns lab.
+
+<h2>Introduction</h2>
+The basic properties of a ladybird farm will be created in this lab. To begin with nothing can be done on the farm.<br>
+The key object to the farm is the <em>LadybirdManager</em> that creates the ladybirds, makes them move (when that is implemented) and draws the ladybird on the screen.<br>
+In this lab you will create many own classes and methods in existing classes so remember that all the names of classes and methods that you as a student have created have to have the prefix 'S_' followed by a describing name.<br>
+
+<h2>Usage</h2>
+When the ladybird farm is done it will work like this:<br>
+key action<br>
+a &nbsp;&nbsp;&nbsp; add new ladybird<br>
+b &nbsp;&nbsp;&nbsp; make the marked ladybird bigger<br>
+c &nbsp;&nbsp;&nbsp; change color on marked ladybird<br>
+r &nbsp;&nbsp;&nbsp; remove marked ladybird<br>
+s &nbsp;&nbsp;&nbsp; make the marked ladybird smaller<br>
+u &nbsp;&nbsp;&nbsp; undo command<br>
+<br>
+Mark a ladybird by clicking on it with the mouse. To make the ladybirds move mark one of them and click were it should go.
+
+<h2>Purpose</h2>
+The purpose is to use design patterns in GUI applications.
+
+<h2>Section A</h2>
+
+<h3>Readings</h3>
+The chapters about the Command pattern in GoF p. 233-242.
+
+<h3>Instructions</h3>
+Inherit from the class <em>AbstractCommand</em> and create the commands for adding and removing ladybirds and edit in <em>FarmApplet</em> so that the commands can be used. Of course it should be possible to undo both the add and the remove command.
+
+<h3>Where to edit</h3>
+Change at the marked places in <em>FarmApplet</em>.
+
+<h3>Hints</h3>
+It is tempting to use the remove command as an undo to the add command but do not do that.
+
+<h2>Section B</h2>
+
+<h3>Readings</h3>
+In Gof about State on p. 305-313.
+
+<h3>Instructions</h3>
+Through inheritance of <em>AbstractState</em> create three simple states to make the ladybird go, turn and stand. Make sure that the ladybird changes state when the current is done for example stop turning when facing the goal in the turning state. <br>
+Create a move command that takes a goal position and makes the marked ladybird turn to the goal, go to it and when it has reached it stand still.  
+
+<h3>Where to edit</h3>
+Edit at the marked places in <em>FarmApplet</em>.
+
+<h3>Hints</h3>
+Use <em>setGoal</em> in the <em>LadyBird</em> to tell it where to move otherwise it does not know.
+
+<h2>Section C</h2>
+
+<h3>Readings</h3>
+The chapter about Mediator in GoF on p. 273-282.
+
+<h3>Instructions</h3>
+When a ladybird moves towards its goal it can overlap other ladybird. This can be avoided by calling the method <em>collide</em> on the ladybird that is overlapped. This leads to a need for an all-to-all relationship between the ladybirds. Remove this bad relationship by introducing a Mediator so that they can move without overlapping and without an all-to-all relationship.
+
+<h3>Where to edit</h3>
+It depends on how the Mediator is implemented.
+
+<h3>Hints</h3>
+Make sure that the collide method is not called on the ladybird that called the Mediator.
+
+<h2>Section D</h2>
+
+<h3>Readings</h3>
+Observer pattern in GoF on p. 293-303.
+
+<h3>Instructions</h3>
+Implement the commands <code>bigger</code>, <code>smaller</code> and <code>change color</code>.<br>
+Every ladybird has an instance of the class <em>LadyBirdSettings</em> use the design pattern Observer to make all the ladybirds settings be updated when the setting is changed on one of them so that all the ladybirds has the same color and size.
+
+<h3>Where to edit</h3>
+It depends on how it is implemented. Change also in the primitives of the <em>Ladybird</em> but not in the method <em>paint</em>.
+
+<h3>Hints</h3>
+Have the subject in the Observer pattern as a Singleton to make sure that there is only one of it.
+
+<h2>Hand in</h2>
+Hand in all classes (.java-files only) that you have created or modified.<br>
+
+</body>
+</html>
