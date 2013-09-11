@@ -55,16 +55,20 @@ public class ModuleA implements Runnable{
 	/**
 	 * Rotates the slices a little each time step.
 	 */
-	public void run() {
+	public void run()
+	{
 		int i = 1;
 		running = true;
-		while (running) {
+		while (running)
+		{
 			drawSlices(i);
 			i++;
 			GamePanel.rePaint();
-		    try { 
+		    try
+		    { 
 				Thread.sleep(70);
-			} catch( InterruptedException e ) {
+			} catch( InterruptedException e )
+			{
 				System.out.println("Twister stopped");
 			}
 		}
@@ -73,8 +77,10 @@ public class ModuleA implements Runnable{
 	/**
 	 * Draws the current slices in to the screen.
 	 */
-	public void drawBackground() {
-		if (running) {
+	public void drawBackground()
+	{
+		if (running)
+		{
 			GamePanel.getBuffer().drawImage(image, 0, 0, null);
 		}
 	}

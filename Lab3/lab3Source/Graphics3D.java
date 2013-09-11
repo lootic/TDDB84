@@ -35,7 +35,8 @@ public class Graphics3D {
      * @param b The bounding box of the circle.
      * @param c The color that is faded towards white.
      */
-    public void printBox(Box b, Color c) {
+    public void printBox(Box b, Color c)
+    {
 	Graphics2D g2 = (Graphics2D)GamePanel.getBuffer();
 	Ellipse2D e = new Ellipse2D.Double(b.x1, b.y1, b.x2 - b.x1,
 					   b.y2 - b.y1);
@@ -50,7 +51,8 @@ public class Graphics3D {
      * @param b Bounding box
      * @param c The color of the rectangle.
      */
-    public void printBonus(Box b, Color c) {
+    public void printBonus(Box b, Color c)
+    {
 	Graphics2D g2 = (Graphics2D)GamePanel.getBuffer();
 	Rectangle2D e = new Rectangle2D.Double(b.x1, b.y1, b.x2 - b.x1,
 					       b.y2 - b.y1);
