@@ -198,6 +198,8 @@ public class StablePanel extends JPanel {
 
 			builder.addWall(column+1, 0, KeyEvent.VK_LEFT);
 			builder.addWall(column+1, 2, KeyEvent.VK_LEFT);
+			
+			builder.setCorridor(column, 1, KeyEvent.VK_RIGHT);
 		}
 		
 		for(int column=0; column < columns; ++column){

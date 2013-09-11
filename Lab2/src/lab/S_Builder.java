@@ -95,7 +95,7 @@ public class S_Builder {
 		addAnyDoor(x, y, dir, true);
 	}
 
-	public void createCorridor(int x, int y, int dir) {
+	public void setCorridor(int x, int y, int dir) {
 		final int xLocal = x;
 		final int yLocal = y;
 		final int dirLocal = dir;
@@ -104,28 +104,36 @@ public class S_Builder {
 			@Override
 			public void run() {
 
-				Room roomA = rooms.get(
-						Integer.toString(xLocal) + Integer.toString(yLocal));
+				Room roomA = rooms.get(Integer.toString(xLocal)
+						+ Integer.toString(yLocal));
+				Room roomB = null;
 
-				Room roomB = rooms.get(
-						Integer.toString(xLocal) + Integer.toString(yLocal));
 				switch (dirLocal) {
 
 				case KeyEvent.VK_UP:
+					roomB = rooms.get(Integer.toString(xLocal)
+							+ Integer.toString(yLocal-1));
 					break;
 				case KeyEvent.VK_DOWN:
+					roomB = rooms.get(Integer.toString(xLocal)
+							+ Integer.toString(yLocal+1));
 
 					break;
 				case KeyEvent.VK_LEFT:
+					roomB = rooms.get(Integer.toString(xLocal-1)
+							+ Integer.toString(yLocal));
 
 					break;
 				case KeyEvent.VK_RIGHT:
+					roomB = rooms.get(Integer.toString(xLocal+1)
+							+ Integer.toString(yLocal));
 
 					break;
 				default:
-
 					break;
 				}
+				roomA.setSide(roomB);
+				roomB.setSide(roomA);
 			}
 		});
 	}
