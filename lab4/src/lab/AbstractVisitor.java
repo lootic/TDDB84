@@ -2,10 +2,12 @@ package lab;
 
 /**
  * An abstract class describing how a visitor looks like.
- *
+ * 
  * @author Peter Sunnergren
  */
 public abstract class AbstractVisitor {
+
+	protected int numberOfVisits = 0;
 
 	/**
 	 * Visits a square.
@@ -27,6 +29,20 @@ public abstract class AbstractVisitor {
 	 */
 	public abstract void visit(Triangle t);
 
-	// YOUR CODE HERE
-	// May be something else should be added?
+	/**
+	 * Sets the number of visits to 0
+	 */
+	public void resetVisitCount() {
+		numberOfVisits = 0;
+	}
+
+	/**
+	 * Find out how many shapes that has been visited since last
+	 * resetVisitCount()
+	 * 
+	 * @return the number of shapes visited
+	 */
+	public int numberOfVisits() {
+		return numberOfVisits;
+	}
 }
