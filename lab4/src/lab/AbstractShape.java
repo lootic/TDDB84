@@ -37,13 +37,24 @@ abstract public class AbstractShape {
 	// in order to facilitate the corresponding design pattern.
 	// END OF YOUR CODE
 
+	public void handleOverlapOf(Rectangle addedRectangleIn)
+	{
+		/*
+		 *  The way we handle intersections with childs inside a parent is by resizing the new added child
+		 *  and that is made by the function removeOverlap in this class
+		 */
+		removeOverlap(addedRectangleIn);
+	}
+	
+	
 	/**
 	 * Removes the overlap between this shape and the new shape by
 	 * resizing the bounds of the latter.
 	 *
 	 * @param bounds The bounds of the new shape.
 	 */
-	private void removeOverlap(Rectangle bounds) {
+	private void removeOverlap(Rectangle bounds) 
+	{
 
 		Rectangle thisBounds = new Rectangle(
 			getX(), getY(), getWidth(), getHeight());
@@ -92,6 +103,9 @@ abstract public class AbstractShape {
 			}
 		}
 	}
+	
+	
+	
 
 	/**
 	 * Gets the marked shape.
