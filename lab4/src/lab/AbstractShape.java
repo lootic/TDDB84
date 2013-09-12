@@ -41,7 +41,15 @@ abstract public class AbstractShape {
 		 *  The way we handle intersections with childs inside a parent is by resizing the new added child
 		 *  and that is made by the function removeOverlap in this class
 		 */
+		AbstractShape sibling = this.getSibling();
+		AbstractShape parent = this.getSibling();
 		removeOverlap(addedRectangleIn);
+		if(sibling != null) {
+			sibling.handleOverlapOf(addedRectangleIn);
+		}
+		if(parent != null) {
+			parent.handleOverlapOf(addedRectangleIn);
+		}
 	}
 	// END OF YOUR CODE
 
