@@ -35,8 +35,6 @@ abstract public class AbstractShape {
 	// removeOverlap is private and should stay private.
 	// You might want to implement a supplementary public method
 	// in order to facilitate the corresponding design pattern.
-	// END OF YOUR CODE
-
 	public void handleOverlapOf(Rectangle addedRectangleIn)
 	{
 		/*
@@ -48,6 +46,8 @@ abstract public class AbstractShape {
 			sibling.handleOverlapOf(addedRectangleIn);
 		}
 	}
+	// END OF YOUR CODE
+
 	
 	
 	/**
