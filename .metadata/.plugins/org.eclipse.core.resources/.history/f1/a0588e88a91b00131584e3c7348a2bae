@@ -1,0 +1,25 @@
+package lab;
+
+public class S_ShapeVisitor extends AbstractVisitor{
+
+	@Override
+	public void visit(Square s) {
+		s.accept(this);
+	}
+
+	@Override
+	public void visit(Rectangle r) {
+		r.accept(this);
+	}
+
+	@Override
+	public void visit(Circle c) {
+		c.accept(this);
+	}
+
+	@Override
+	public void visit(Triangle t) {
+		t.accept(this);
+	}
+
+}
