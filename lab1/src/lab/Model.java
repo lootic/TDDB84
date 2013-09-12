@@ -83,6 +83,8 @@ class Model extends Observable implements Runnable
 
 			// YOUR CODE HERE
 			// The model has a new state. What does it do with it?
+			hasChanged();
+			notifyObservers(newState);
 			// END OF YOUR CODE
 
 			try {

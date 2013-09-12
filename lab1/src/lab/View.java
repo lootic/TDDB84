@@ -94,7 +94,8 @@ class View extends Canvas implements Observer
 			g.fillOval(o.x - R / 2, o.y - R / 2, R, R);
 	}
 
-	public void paint(Graphics g) {
+	public void paint(Graphics g) 
+	{
 
 		g.setColor(Color.RED);
 		paint1(g, trajectory1);
