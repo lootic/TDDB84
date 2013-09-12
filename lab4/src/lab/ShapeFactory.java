@@ -118,9 +118,11 @@ public class ShapeFactory {
 
 			// YOUR CODE HERE
 			// Remove the overlap caused by the bounding rectangle of
+			
+			parent.getLastChild().handleOverlapOf(r);
+			
 			// the new shape.
 			// END OF YOUR CODE
-			s.handleOverlapOf(r);
 		} while (isToSmall(s, r.width, r.height) && (counter < 100));
 
 		if (!(counter < 100 )) {
