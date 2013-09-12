@@ -1,9 +1,9 @@
 package lab;
 
 /**
- * A class that creates shapes according to rules about size.
- * Also adds the new shape to its parent.
- *
+ * A class that creates shapes according to rules about size. Also adds the new
+ * shape to its parent.
+ * 
  * @author Peter Sunnergren
  */
 public class ShapeFactory {
@@ -12,7 +12,7 @@ public class ShapeFactory {
 
 	/**
 	 * Used to get the instance of the factory.
-	 *
+	 * 
 	 * @return An instance of the factory.
 	 */
 	public static ShapeFactory instance() {
@@ -26,14 +26,12 @@ public class ShapeFactory {
 
 		AbstractShape marked = Marked.instance();
 
-		if ((marked instanceof Square) ||
-			(marked instanceof SquareProxy))
+		if ((marked instanceof Square) || (marked instanceof SquareProxy))
 
-			return (AbstractSquare)marked;
+			return (AbstractSquare) marked;
 
-		if ((marked instanceof Circle) ||
-			(marked instanceof Triangle) ||
-			(marked instanceof Rectangle))
+		if ((marked instanceof Circle) || (marked instanceof Triangle)
+				|| (marked instanceof Rectangle))
 
 			return marked.getParent();
 
@@ -42,17 +40,21 @@ public class ShapeFactory {
 
 	private int getMaxSize(AbstractShape s) {
 
-		if (s instanceof Square) return 300;
-		if (s instanceof SquareProxy) return 300;
-		if (s instanceof Circle) return 150;
-		if (s instanceof Triangle) return 150;
-		if (s instanceof Rectangle) return 150;
+		if (s instanceof Square)
+			return 300;
+		if (s instanceof SquareProxy)
+			return 300;
+		if (s instanceof Circle)
+			return 150;
+		if (s instanceof Triangle)
+			return 150;
+		if (s instanceof Rectangle)
+			return 150;
 
 		return 0;
 	}
 
-	private boolean isToSmall(AbstractShape s,
-		double width, double height) {
+	private boolean isToSmall(AbstractShape s, double width, double height) {
 
 		double parentScale = s.getParent().getScale();
 
@@ -79,8 +81,9 @@ public class ShapeFactory {
 
 	/**
 	 * Loops until the shape can be randomly placed somewhere.
-	 *
-	 * @param s A shape.
+	 * 
+	 * @param s
+	 *            A shape.
 	 */
 	private void create(AbstractShape s) {
 
@@ -98,38 +101,39 @@ public class ShapeFactory {
 
 		do {
 			counter++;
-			if ((s instanceof Square) ||
-				(s instanceof SquareProxy) ||
-				(s instanceof Circle)) {
+			if ((s instanceof Square) || (s instanceof SquareProxy)
+					|| (s instanceof Circle)) {
 
-				r.height = r.width = (int)Math.round(Math.random() *
-					getMaxSize(s) * parent.getScale());
+				r.height = r.width = (int) Math.round(Math.random()
+						* getMaxSize(s) * parent.getScale());
 			} else {
-				r.width = (int)Math.round(Math.random() *
-					getMaxSize(s) * parent.getScale());
-				r.height = (int)Math.round(Math.random() *
-					getMaxSize(s) * parent.getScale());
+				r.width = (int) Math.round(Math.random() * getMaxSize(s)
+						* parent.getScale());
+				r.height = (int) Math.round(Math.random() * getMaxSize(s)
+						* parent.getScale());
 			}
 
-			r.x = (int)Math.round(Math.random() *
-				(parent.getWidth() - r.width)) + parent.getX();
-			r.y = (int)Math.round(Math.random() *
-				(parent.getHeight() - r.height)) + parent.getY();
+			r.x = (int) Math.round(Math.random()
+					* (parent.getWidth() - r.width))
+					+ parent.getX();
+			r.y = (int) Math.round(Math.random()
+					* (parent.getHeight() - r.height))
+					+ parent.getY();
 
 			// YOUR CODE HERE
 			// Remove the overlap caused by the bounding rectangle of
-			
-			parent.getLastChild().handleOverlapOf(r);
-			
+			if (parent.hasChildren()) {
+				parent.getLastChild().handleOverlapOf(r);
+			}
+
 			// the new shape.
 			// END OF YOUR CODE
 		} while (isToSmall(s, r.width, r.height) && (counter < 100));
 
-		if (!(counter < 100 )) {
-			ShapeApplet.setOutputText(
-				s.getClass().toString() + " can not be placed.");
-			System.out.println(
-				s.getClass().toString() + " can not be placed.");
+		if (!(counter < 100)) {
+			ShapeApplet.setOutputText(s.getClass().toString()
+					+ " can not be placed.");
+			System.out.println(s.getClass().toString() + " can not be placed.");
 		} else {
 			s.setX(r.x);
 			s.setY(r.y);
@@ -138,7 +142,8 @@ public class ShapeFactory {
 			s.setScale((s.getWidth() / 400.0) * parent.getScale());
 
 			if (s instanceof AbstractSquare)
-				((AbstractSquare)s).setDepth(((AbstractSquare)parent).getDepth() + 1);
+				((AbstractSquare) s).setDepth(((AbstractSquare) parent)
+						.getDepth() + 1);
 
 			parent.addChild(s);
 		}
@@ -154,6 +159,7 @@ public class ShapeFactory {
 
 		return square;
 	}
+
 	/**
 	 * Creates a square proxy.
 	 */
@@ -184,7 +190,7 @@ public class ShapeFactory {
 	/**
 	 * Creates a rectangle.
 	 */
-	public void createRectangle () {
+	public void createRectangle() {
 
 		create(new Rectangle());
 	}
