@@ -94,15 +94,14 @@ public class ShapePanel extends JPanel {
 	public void applyVisitor() {
 
 
-		visitor.resetVisitCount();
 		// YOUR CODE HERE
-		root.accept(visitor);
 		// Place the code to count the shapes using the Visitor.
 		// END OF YOUR CODE
 
 		
 		ShapeApplet.setOutputText(
 			"Number of shapes: " + String.valueOf(visitor.numberOfVisits()));
+		visitor.resetVisitCount();
 	}
 
 	/**
