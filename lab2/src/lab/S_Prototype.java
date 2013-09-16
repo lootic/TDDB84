@@ -29,8 +29,6 @@ public class S_Prototype extends S_Creator {
 		setDoorAt(roomA, roomB, (Door) boxDoor.clone());
 	}
 
-
-
 	@Override
 	public void createDoorBetween(Room roomA, Room roomB) {
 		setDoorAt(roomA, roomB, (Door) door.clone());

@@ -20,7 +20,6 @@ public class Main extends Applet {
 	private static final double DFLT_m1  = 1.0e13;
 
 	private Thread thread;
-	
 
 	public Main() {
 

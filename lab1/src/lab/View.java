@@ -13,8 +13,7 @@ import java.util.Observer;
 // YOUR CODE HERE
 // The View plays a particular role in the Subject-Observer relationship.
 // Therefore, the View will implement a particular interface.
-class View extends Canvas implements Observer
-{
+class View extends Canvas implements Observer {
 // END OF YOUR CODE
 
 	private static final long serialVersionUID = 1L;
@@ -25,12 +24,14 @@ class View extends Canvas implements Observer
 	protected Trajectory trajectory1, trajectory2;
 
 	View(Model model) {
+
 		width = DFLT_WIDTH;
 		height = DFLT_HEIGHT;
 		trajectory1 = new Trajectory();
 		trajectory2 = new Trajectory();
 
 		// YOUR CODE HERE
+		// Let the Subject know that we want to observe it.
 		model.addObserver(this);
 		// END OF YOUR CODE
 	}
@@ -43,6 +44,7 @@ class View extends Canvas implements Observer
 		trajectory2 = new Trajectory();
 
 		// YOUR CODE HERE
+		// Let the Subject know that we want to observe it.
 		model.addObserver(this);
 		// END OF YOUR CODE
 	}
@@ -68,10 +70,12 @@ class View extends Canvas implements Observer
 	}
 
 	// YOUR CODE HERE
+	// Put here the method that implements the interface that
+	// you added when you declared the class View.
+	// This method will just call handleNewState.
 	@Override
-	public void update(Observable arg0, Object modelStateIn)
-	{
-		handleNewState((ModelState)modelStateIn);		
+	public void update(Observable o, Object state) {
+		handleNewState((ModelState)state);
 	}
 	// END OF YOUR CODE
 
@@ -93,8 +97,7 @@ class View extends Canvas implements Observer
 			g.fillOval(o.x - R / 2, o.y - R / 2, R, R);
 	}
 
-	public void paint(Graphics g) 
-	{
+	public void paint(Graphics g) {
 
 		g.setColor(Color.RED);
 		paint1(g, trajectory1);

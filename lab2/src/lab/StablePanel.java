@@ -119,7 +119,6 @@ public class StablePanel extends JPanel {
 	public void builderConstruction() {}
 
 	
-	S_Creator prototype = new S_Prototype();
 	
 	/**
 	 * Construction using prototypes.
@@ -127,6 +126,8 @@ public class StablePanel extends JPanel {
 	public void prototypeConstruction()
 	{
 		Stable stable = Stable.instance();
+
+		S_Creator prototype = new S_Prototype();
 		
 		// Creating the rooms for the stable
 		prototype.createRoomAt(0, 0);
@@ -144,7 +145,7 @@ public class StablePanel extends JPanel {
 		prototype.createOuterWall(stable.getRoom(0, 1), KeyEvent.VK_LEFT);
 		prototype.createOuterWall(stable.getRoom(0, 2), KeyEvent.VK_LEFT);		
 		// Creating North outerwalls
-		prototype.createOuterWall(stable.getRoom(0, 0), KeyEvent.VK_UP);
+		stable.getRoom(0, 0).setSide(prototype.createOuterWall(stable.getRoom(0, 0), KeyEvent.VK_UP));
 		prototype.createOuterWall(stable.getRoom(1, 0), KeyEvent.VK_UP);
 		prototype.createOuterWall(stable.getRoom(2, 0), KeyEvent.VK_UP);		
 		// Creating East outerwalls
