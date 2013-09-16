@@ -19,7 +19,7 @@ public class S_Prototype extends S_Creator {
 	
 	@Override
 	public void createRoomAt(int x, int y) {
-		room = (Room) room.clone();
+		Room room = (Room) this.room.clone();
 		room.move(x, y);
 		Stable.instance().addRoom(room);
 	}
@@ -35,8 +35,6 @@ public class S_Prototype extends S_Creator {
 	public void createDoorBetween(Room roomA, Room roomB) {
 		setDoorAt(roomA, roomB, (Door) door.clone());
 	}
-	
-	
 
 	@Override
 	public void createInnerWall(Room room, int dir) {

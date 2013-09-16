@@ -6,54 +6,30 @@ public abstract class S_Creator {
 	public abstract void createRoomAt(int x, int y);
 
 	public abstract void createOuterWall(Room room, int dir);
-	
+
 	public abstract void createInnerWall(Room room, int dir);
 
 	public abstract void createDoorBetween(Room roomA, Room roomB);
 
 	public abstract void createBoxDoorBetween(Room roomA, Room roomB);
 	
-	
-	private void connectRoomsAndSetNext(Room from, Room to, int dir)
-	{
-		from.setSide(to);
-		to.setSide(from);
-		from = to;
-		to = getRoomAdjacentTo(from.getX(), to.getX(), dir);
-	}	
-	
-	public void createCorridoreAt(Room from, Room to)
-	{
-		if (from.getX() == to.getX()) {
-			Room smallestRoom = from.getY() < to.getY() ? from : to;
-			Room nextRoom = getRoomAdjacentTo(smallestRoom.getX(), smallestRoom
-					.getY(), KeyEvent.VK_DOWN);
-			for (int i = 0; i < Math.abs(from.getY() - to.getY()); ++i) {
-				connectRoomsAndSetNext(smallestRoom, nextRoom,
-						KeyEvent.VK_RIGHT);
-			}
-		} else if (from.getY() == to.getY()) {
-			Room smallestRoom = from.getX() < to.getX() ? from : to;
-			Room nextRoom = getRoomAdjacentTo(smallestRoom.getX(), smallestRoom
-					.getX(), KeyEvent.VK_RIGHT);
-			for (int i = 0; i < Math.abs(from.getX() - to.getX()); ++i) {
-				connectRoomsAndSetNext(smallestRoom, nextRoom,
-						KeyEvent.VK_RIGHT);
-			}
-		}
-		// else error input, ignore
+	public  void createCorridorBetween(Room roomA, Room roomB){
+		roomA.setSide(roomB);
+		roomB.setSide(roomA);
 	}
 	
-	
-	public int getOppositeDirection(int dirIn)
-	{
-		switch(dirIn)		
-		{
-		case KeyEvent.VK_RIGHT : return KeyEvent.VK_LEFT;
-		case KeyEvent.VK_LEFT : return KeyEvent.VK_RIGHT;
-		case KeyEvent.VK_UP : return KeyEvent.VK_DOWN;
-		case KeyEvent.VK_DOWN : return KeyEvent.VK_UP;
-		default : return dirIn;
+	public int getOppositeDirection(int dirIn) {
+		switch (dirIn) {
+		case KeyEvent.VK_RIGHT:
+			return KeyEvent.VK_LEFT;
+		case KeyEvent.VK_LEFT:
+			return KeyEvent.VK_RIGHT;
+		case KeyEvent.VK_UP:
+			return KeyEvent.VK_DOWN;
+		case KeyEvent.VK_DOWN:
+			return KeyEvent.VK_UP;
+		default:
+			return dirIn;
 		}
 	}
 
