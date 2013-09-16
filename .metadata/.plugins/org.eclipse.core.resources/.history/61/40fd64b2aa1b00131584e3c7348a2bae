@@ -1,0 +1,39 @@
+package lab;
+
+/**
+ * An abstract class describing how a visitor looks like.
+ *
+ * @author Peter Sunnergren
+ */
+public abstract class AbstractVisitor {
+
+	protected int numberOfVisits = 0;
+	/**
+	 * Visits a square.
+	 */
+	public abstract void visit(Square s);
+
+	/**
+	 * Visits a rectangle.
+	 */
+	public abstract void visit(Rectangle r);
+
+	/**
+	 * Visits a circle.
+	 */
+	public abstract void visit(Circle c);
+
+	/**
+	 * Visits a triangle.
+	 */
+	public abstract void visit(Triangle t);
+
+	
+	public void resetVisitCount(){
+		numberOfVisits = 0;
+	}
+	
+	public int numberOfVisits(){
+		return numberOfVisits;
+	}
+}

@@ -16960,3 +16960,254 @@ org.eclipse.core.internal.resources.ResourceException: Resource is out of sync w
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1311)
 !SUBENTRY 1 org.eclipse.core.resources 4 274 2013-09-12 14:02:49.767
 !MESSAGE Resource is out of sync with the file system: '/lab4/src/lab/ShapeFactory.java'.
+<<<<<<< HEAD
+=======
+!SESSION 2013-09-12 15:15:40.396 -----------------------------------------------
+eclipse.buildId=M20100211-1343
+java.version=1.6.0_51
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=solaris, ARCH=sparc, WS=gtk, NL=sv_SE
+Command-line arguments:  -os solaris -ws gtk -arch sparc
+
+!ENTRY org.eclipse.ui.workbench 2 0 2013-09-12 15:16:04.359
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-09-12 15:16:04.359
+!MESSAGE Conflict for 'AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.RenameAction':
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.RenameAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.RenameAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@56c3cf),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.RenameAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.RenameAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@56c3cf),sourcePriority=16384)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-09-12 15:16:04.360
+!MESSAGE Conflict for 'AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.MoveFieldAction':
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.MoveFieldAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.MoveFieldAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@56c3cf),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.MoveFieldAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.MoveFieldAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@56c3cf),sourcePriority=16384)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-09-12 15:16:04.360
+!MESSAGE Conflict for 'AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.EncapsulateFieldAction':
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.EncapsulateFieldAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.EncapsulateFieldAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@56c3cf),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.EncapsulateFieldAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.EncapsulateFieldAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@56c3cf),sourcePriority=16384)
+
+!ENTRY org.eclipse.jface 2 0 2013-09-12 15:16:04.397
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-09-12 15:16:04.397
+!MESSAGE A conflict occurred for ALT+SHIFT+D R:
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.debug,Debug on Server,
+		Debug the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.rubypeople.rdt.debug.ui.RubyShortcut.debug,Debug Ruby Application,
+		Debug Ruby Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-09-12 15:16:04.397
+!MESSAGE A conflict occurred for ALT+SHIFT+X R:
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.run,Run on Server,
+		Run the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.rubypeople.rdt.debug.ui.RubyShortcut.run,Run Ruby Application,
+		Run Ruby Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-09-12 15:16:04.398
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		ActionDelegateHandlerProxy(null,org.eclipse.jdt.internal.ui.actions.OpenTypeAction),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(com.python.pydev.analysis.actions.pyGlobalsBrowserWorkbench,Python Show Class Browser,
+		Show Class Browser,
+		Category(org.python.pydev.ui.category.source,Pydev - Editor,Pydev editor category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-09-12 15:16:04.398
+!MESSAGE A conflict occurred for F4:
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(F4,
+	ParameterizedCommand(Command(org.rubypeople.rdt.ui.edit.text.ruby.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-09-12 15:16:04.398
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.rubypeople.rdt.testunit.rerunLastTest,Rerun Last Test,
+		Rerun the last executed test,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-09-12 15:16:04.398
+!MESSAGE A conflict occurred for ALT+CTRL+H:
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.call.hierarchy,Open Call Hierarchy,
+		Open a call hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.rubypeople.rdt.ui.edit.text.ruby.open.call.hierarchy,Open Call Hierarchy,
+		Open a call hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-09-12 15:16:04.398
+!MESSAGE A conflict occurred for CTRL+SHIFT+H:
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		ActionDelegateHandlerProxy(null,org.eclipse.jdt.internal.ui.actions.OpenTypeInHierarchyAction),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.rubypeople.rdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.osgi 2 0 2013-09-12 15:16:39.650
+!MESSAGE While loading class "org.rubypeople.rdt.internal.core.util.Messages", thread "Thread[Worker-9,5,main]" timed out waiting (5000ms) for thread "Thread[main,6,main]" to finish starting bundle "org.rubypeople.rdt.core_1.3.2.1263228621 [551]". To avoid deadlock, thread "Thread[Worker-9,5,main]" is proceeding but "org.rubypeople.rdt.internal.core.util.Messages" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: State change in progress for bundle "reference:file:plugins/org.rubypeople.rdt.core_1.3.2.1263228621.jar" by thread "main".
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1073)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:278)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:408)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:111)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:449)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:211)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:381)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:457)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:105)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at org.rubypeople.rdt.internal.core.search.indexing.IndexManager.processName(IndexManager.java:281)
+	at org.rubypeople.rdt.internal.core.search.processing.JobManager.reset(JobManager.java:300)
+	at org.rubypeople.rdt.internal.core.search.indexing.IndexManager.reset(IndexManager.java:794)
+	at org.rubypeople.rdt.internal.core.RubyModelManager.startIndexing(RubyModelManager.java:1036)
+	at org.rubypeople.rdt.internal.core.RubyModelManager.access$2(RubyModelManager.java:1035)
+	at org.rubypeople.rdt.internal.core.RubyModelManager$6.run(RubyModelManager.java:988)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+	... 19 more
+Root exception:
+org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1073)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:278)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:408)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:111)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:449)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:211)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:381)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:457)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:105)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at org.rubypeople.rdt.internal.core.search.indexing.IndexManager.processName(IndexManager.java:281)
+	at org.rubypeople.rdt.internal.core.search.processing.JobManager.reset(JobManager.java:300)
+	at org.rubypeople.rdt.internal.core.search.indexing.IndexManager.reset(IndexManager.java:794)
+	at org.rubypeople.rdt.internal.core.RubyModelManager.startIndexing(RubyModelManager.java:1036)
+	at org.rubypeople.rdt.internal.core.RubyModelManager.access$2(RubyModelManager.java:1035)
+	at org.rubypeople.rdt.internal.core.RubyModelManager$6.run(RubyModelManager.java:988)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.osgi 2 0 2013-09-12 15:16:44.665
+!MESSAGE While loading class "org.rubypeople.rdt.internal.core.RubyModelManager$VariablesAndContainersLoadHelper", thread "Thread[Worker-8,5,main]" timed out waiting (5000ms) for thread "Thread[main,6,main]" to finish starting bundle "org.rubypeople.rdt.core_1.3.2.1263228621 [551]". To avoid deadlock, thread "Thread[Worker-8,5,main]" is proceeding but "org.rubypeople.rdt.internal.core.RubyModelManager$VariablesAndContainersLoadHelper" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: State change in progress for bundle "reference:file:plugins/org.rubypeople.rdt.core_1.3.2.1263228621.jar" by thread "main".
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1073)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:278)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:408)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:111)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:449)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:211)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:381)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:457)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:105)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at org.rubypeople.rdt.internal.core.RubyModelManager.loadVariablesAndContainers(RubyModelManager.java:1052)
+	at org.rubypeople.rdt.internal.core.RubyModelManager$5.run(RubyModelManager.java:960)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+	... 15 more
+Root exception:
+org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1073)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:278)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:408)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:111)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:449)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:211)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:381)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:457)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:398)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:105)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at org.rubypeople.rdt.internal.core.RubyModelManager.loadVariablesAndContainers(RubyModelManager.java:1052)
+	at org.rubypeople.rdt.internal.core.RubyModelManager$5.run(RubyModelManager.java:960)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+>>>>>>> e54ecdb243b840b8f639e2f72a7695d1b86e3cca

@@ -106,12 +106,24 @@ public class StablePanel extends JPanel {
 		room4.setSide(boxDoor34);
 	}
 
+	protected S_Factory createFactory(){
+		return  new S_Factory();
+	}
+	
+	protected S_Builder createBuilder(){
+		return new S_Builder(Stable.instance());
+	}
+	
+	protected S_Prototype createPrototype(MapSite mapsite) {
+		return new S_Prototype(mapsite);
+	}
+	
 	/**
 	 * Construction is made using an Factory.
 	 */
 	public void factoryConstruction()
 	{
-		S_Factory factory = new S_Factory();
+		S_Factory factory = createFactory();
 		
 		Room room;
 		Wall wall;
@@ -188,7 +200,7 @@ public class StablePanel extends JPanel {
 	 * Construction using the Builder pattern.
 	 */
 	public void builderConstruction() {
-		S_Builder builder = new S_Builder(Stable.instance());
+		S_Builder builder = createBuilder();
 		final int columns = 3;
 		final int rows = 3;
 		
@@ -232,25 +244,16 @@ public class StablePanel extends JPanel {
 				}
 			}
 		}
-		
-		//create corridor
-		
-		
 		builder.createResult();
 	}
-
-	
-	
-	
-	
 
 	/**
 	 * Construction using prototypes.
 	 */
 	public void prototypeConstruction()
 	{
-		S_Prototype<Room> roomPrototype = new S_Prototype<Room>(new Room());
-		S_Prototype<Wall> wallPrototype = new S_Prototype<Wall>(new Wall());
+		S_Prototype<Room> roomPrototype = createPrototype(new Room());
+		S_Prototype<Wall> wallPrototype = createPrototype(new Wall());
 
 		// S_Prototype<BoxDoor> booxDoorPrototype = new S_Prototype<BoxDoor>(new
 		// BoxDoor());
@@ -313,11 +316,9 @@ public class StablePanel extends JPanel {
 			roomArray[column][2].setSide(wall);
 			roomArray[column][1].setSide(roomArray[column+1][1]);
 			roomArray[column+1][1].setSide(roomArray[column][1]);
-		}
-		
-		
+		}		
 
-		S_Prototype<BoxDoor> boxDoorPrototype = new S_Prototype<BoxDoor>(new BoxDoor());
+		S_Prototype<BoxDoor> boxDoorPrototype = createPrototype(new BoxDoor());
 		BoxDoor boxDoor;
 		for(int column=0; column < roomArray.length; ++column){
 			boxDoor = boxDoorPrototype.clone();
