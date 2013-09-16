@@ -165,10 +165,8 @@ public class StablePanel extends JPanel {
 		
 		// Creating North boxDoors
 		prototype.createBoxDoorBetween(stable.getRoom(0, 0), stable.getRoom(0, 1));
-		
-		// Creating Corridor in middle
-		prototype.createCorridorBetween(stable.getRoom(0, 1), stable.getRoom(1, 1));
-		prototype.createCorridorBetween(stable.getRoom(1, 1), stable.getRoom(2, 1));	
+		prototype.createBoxDoorBetween(stable.getRoom(1, 0), stable.getRoom(1, 1));
+			
 		
 	}
 
