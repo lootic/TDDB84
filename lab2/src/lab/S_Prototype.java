@@ -59,10 +59,6 @@ public class S_Prototype extends S_Creator {
 
 	@Override
 	public void createDoorBetween(Room roomA, Room roomB) {
-		if(roomA == null || roomB == null  || (Door)door.clone == null)
-		{
-			
-		}
 		setDoorAt(roomA, roomB, (Door) door.clone());
 	}
 

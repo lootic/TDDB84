@@ -19,9 +19,6 @@ public class BoxDoor extends Door {
 		this(door.room1, door.room2);
 	}
 
-	public BoxDoor() { //added
-	}
-
 	public MapSite clone() {
 
 		return new BoxDoor(this);

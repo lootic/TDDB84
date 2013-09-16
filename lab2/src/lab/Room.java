@@ -31,6 +31,11 @@ public class Room extends MapSite {
 	public Room (int x, int y)
 	{
 		this();						//added
+		sides = new ArrayList<MapSite>();
+		sides.add(new NullSide(KeyEvent.VK_DOWN));
+		sides.add(new NullSide(KeyEvent.VK_UP));
+		sides.add(new NullSide(KeyEvent.VK_LEFT));
+		sides.add(new NullSide(KeyEvent.VK_RIGHT));
 		this.x = x;
 		this.y = y;
 		offsetX = 25 + x*roomSize;
@@ -40,11 +45,6 @@ public class Room extends MapSite {
 	
 	public Room()								//moved from Room(int, int)
 	{
-		sides = new ArrayList<MapSite>();
-		sides.add(new NullSide(KeyEvent.VK_DOWN));
-		sides.add(new NullSide(KeyEvent.VK_UP));
-		sides.add(new NullSide(KeyEvent.VK_LEFT));
-		sides.add(new NullSide(KeyEvent.VK_RIGHT));
 	}
 
 	public Room(Room room) {

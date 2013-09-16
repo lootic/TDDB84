@@ -17,14 +17,10 @@ public class Door extends MapSite {
 	protected int halfDoorSize;
 	protected int wallSize;
 	public boolean opened = false;
-	
-	public Door() { //added
-		halfDoorSize = Room.getSize() / 4;
-		wallSize = (int)Math.round(Room.getSize() * 0.15);
-	}
 
 	public Door (Room r1, Room r2) {
-		this(); 						//added
+		halfDoorSize = Room.getSize() / 4;
+		wallSize = (int)Math.round(Room.getSize() * 0.15);
 		move(r1, r2);
 	}
 
