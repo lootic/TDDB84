@@ -3,7 +3,8 @@ package lab;
 public class S_ShapeVisitor extends AbstractVisitor{
 
 	@Override
-	public void visit(Square s) {
+	public void visit(Square s)
+	{
 		++numberOfVisits;
 	}
 

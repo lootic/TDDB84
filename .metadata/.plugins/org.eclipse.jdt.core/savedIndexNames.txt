@@ -1,5 +1,19 @@
-INDEX VERSION 1.126+/home/jonlu159/workspace/TDDB84/.metadata/.plugins/org.eclipse.jdt.core
-1431162455.index
-3408485364.index
-575340225.index
-3141775227.index
+INDEX VERSION 1.126+C:\Skola\TDDB84\.metadata\.plugins\org.eclipse.jdt.core
+3946796104.index
+1995173708.index
+2620941534.index
+30765161.index
+3133528496.index
+3974580528.index
+4108727661.index
+1299022128.index
+4041092966.index
+3065916431.index
+1115467115.index
+163172794.index
+1498219845.index
+1968947691.index
+87111012.index
+4155206848.index
+1697886153.index
+305854171.index

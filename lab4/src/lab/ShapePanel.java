@@ -44,8 +44,9 @@ public class ShapePanel extends JPanel {
 
 		if (AbstractShape.paintChildren) {
 			root.paint(g);
-		} else if (paintVisitor) {
-			applyVisitor();
+		} else if (paintVisitor)
+		{
+			applyVisitor();			
 		} else if (paintIterator) {
 			// YOUR CODE HERE
 			// Place the code to draw with the Iterator.
