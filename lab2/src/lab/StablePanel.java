@@ -158,14 +158,10 @@ public class StablePanel extends JPanel {
 
 		// Creating North innerwalls
 		prototype.createInnerWall(stable.getRoom(0, 0), KeyEvent.VK_RIGHT);
-		prototype.createInnerWall(stable.getRoom(1, 0), KeyEvent.VK_LEFT);
 		prototype.createInnerWall(stable.getRoom(1, 0), KeyEvent.VK_RIGHT);
-		prototype.createInnerWall(stable.getRoom(2, 0), KeyEvent.VK_LEFT);
 		// Creating South innerwalls
 		prototype.createInnerWall(stable.getRoom(0, 2), KeyEvent.VK_RIGHT);
-		prototype.createInnerWall(stable.getRoom(1, 2), KeyEvent.VK_LEFT);
-		prototype.createInnerWall(stable.getRoom(1, 2), KeyEvent.VK_RIGHT);
-		prototype.createInnerWall(stable.getRoom(2, 2), KeyEvent.VK_LEFT);		
+		prototype.createInnerWall(stable.getRoom(1, 2), KeyEvent.VK_RIGHT);	
 		
 		// Creating North boxDoors
 		prototype.createBoxDoorBetween(stable.getRoom(0, 0), stable.getRoom(0, 1));

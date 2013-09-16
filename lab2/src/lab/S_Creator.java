@@ -43,6 +43,19 @@ public abstract class S_Creator {
 		}
 		// else error input, ignore
 	}
+	
+	
+	public int getOppositeDirection(int dirIn)
+	{
+		switch(dirIn)		
+		{
+		case KeyEvent.VK_RIGHT : return KeyEvent.VK_LEFT;
+		case KeyEvent.VK_LEFT : return KeyEvent.VK_RIGHT;
+		case KeyEvent.VK_UP : return KeyEvent.VK_DOWN;
+		case KeyEvent.VK_DOWN : return KeyEvent.VK_UP;
+		default : return dirIn;
+		}
+	}
 
 	protected Room getRoomAdjacentTo(int x, int y, int dir) {
 		switch (dir) {
