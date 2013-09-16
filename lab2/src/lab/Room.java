@@ -136,6 +136,7 @@ public class Room extends MapSite {
 
 		while (iter.hasNext()) {
 			MapSite m = iter.next();
+			
 			if (side.getDirection(this) == m.getDirection(this)) {
 				sides.remove(m);
 				iter = sides.iterator();

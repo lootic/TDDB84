@@ -106,237 +106,120 @@ public class StablePanel extends JPanel {
 		room4.setSide(boxDoor34);
 	}
 
-	protected S_Factory createFactory(){
-		return  new S_Factory();
-	}
-	
-	protected S_Builder createBuilder(){
-		return new S_Builder(Stable.instance());
-	}
-	
-	protected S_Prototype createPrototype(MapSite mapsite) {
-		return new S_Prototype(mapsite);
-	}
+
 	
 	/**
 	 * Construction is made using an Factory.
 	 */
 	public void factoryConstruction()
 	{
-		S_Factory factory = createFactory();
-		
-		Room room;
-		Wall wall;
-		Room[][] roomArray = new Room[3][3];
-		
-		for(int column=0; column < roomArray.length; ++column)
-		{
-			for(int row=0; row < roomArray[0].length; ++row)
-			{
-				room = factory.createRoom(column, row);
-				if(column == roomArray.length-1)
-				{
-					wall = factory.createWall(KeyEvent.VK_RIGHT);
-					room.setSide(wall);
-				}
-				if(row == roomArray[0].length-1)
-				{
-					wall = factory.createWall(KeyEvent.VK_DOWN);
-					room.setSide(wall);
-				}
-				if(row == 0)
-				{
-					wall = factory.createWall(KeyEvent.VK_UP);
-					room.setSide(wall);
-				}
-				if(column == 0)
-				{
-					wall = factory.createWall(KeyEvent.VK_LEFT);
-					room.setSide(wall);
-				}
-
-				Stable.instance().addRoom(room);
-				roomArray[column][row] = room;
-			}
-		}
-		
-		//create corridor
-		for(int column=0; column < roomArray.length-1; ++column){
-			wall = factory.createWall(KeyEvent.VK_RIGHT);
-			roomArray[column][0].setSide(wall);
-			wall = factory.createWall(KeyEvent.VK_RIGHT);
-			roomArray[column][2].setSide(wall);
-
-			wall = factory.createWall(KeyEvent.VK_LEFT);
-			roomArray[column+1][0].setSide(wall);
-			wall = factory.createWall(KeyEvent.VK_LEFT);
-			roomArray[column+1][2].setSide(wall);
-			
-			roomArray[column][2].setSide(wall);
-			roomArray[column][1].setSide(roomArray[column+1][1]);
-			roomArray[column+1][1].setSide(roomArray[column][1]);
-		}
-		
-		
-
-		BoxDoor boxDoor;
-		for(int column=0; column < roomArray.length; ++column){
-			boxDoor = factory.createBoxDoor(roomArray[column][1], roomArray[column][0]);
-			roomArray[column][1].setSide(boxDoor);
-			roomArray[column][0].setSide(boxDoor);
-			
-			boxDoor = factory.createBoxDoor(roomArray[column][1], roomArray[column][2]);
-			roomArray[column][1].setSide(boxDoor);
-			roomArray[column][2].setSide(boxDoor);
-		}
-		
-
-		Door door = factory.createDoor(roomArray[2][0],roomArray[2][1]);
-		roomArray[2][1].setSide(door);
-		roomArray[2][0].setSide(door);
 	}
 
 	/**
 	 * Construction using the Builder pattern.
 	 */
 	public void builderConstruction() {
-		S_Builder builder = createBuilder();
-		final int columns = 3;
-		final int rows = 3;
-		
-		for(int column=0; column < columns-1; ++column){
-			builder.addWall(column, 0, KeyEvent.VK_RIGHT);
-			builder.addWall(column, 2, KeyEvent.VK_RIGHT);
-
-			builder.addWall(column+1, 0, KeyEvent.VK_LEFT);
-			builder.addWall(column+1, 2, KeyEvent.VK_LEFT);
-			
-			builder.setCorridor(column, 1, KeyEvent.VK_RIGHT);
-		}
-		
-		for(int column=0; column < columns; ++column){
-			builder.addBoxDoor(column, 0, KeyEvent.VK_DOWN);
-			builder.addBoxDoor(column, 2, KeyEvent.VK_UP);
-		}
-
-		builder.addDoor(2, 0, KeyEvent.VK_DOWN);
-		
-		for(int column=0; column < columns; ++column)
-		{
-			for(int row=0; row < rows; ++row)
-			{
-				builder.addRoom(column, row);
-				if(column == columns-1)
-				{
-					builder.addWall(column, row, KeyEvent.VK_RIGHT);
-				}
-				if(row == rows-1)
-				{
-					builder.addWall(column, row, KeyEvent.VK_DOWN);
-				}
-				if(row == 0)
-				{
-					builder.addWall(column, row, KeyEvent.VK_UP);
-				}
-				if(column == 0)
-				{
-					builder.addWall(column, row, KeyEvent.VK_LEFT);
-				}
-			}
-		}
-		builder.createResult();
+//		S_Builder builder = createBuilder();
+//		final int columns = 3;
+//		final int rows = 3;
+//		
+//		for(int column=0; column < columns-1; ++column){
+//			builder.addWall(column, 0, KeyEvent.VK_RIGHT);
+//			builder.addWall(column, 2, KeyEvent.VK_RIGHT);
+//
+//			builder.addWall(column+1, 0, KeyEvent.VK_LEFT);
+//			builder.addWall(column+1, 2, KeyEvent.VK_LEFT);
+//			
+//			builder.setCorridor(column, 1, KeyEvent.VK_RIGHT);
+//		}
+//		
+//		for(int column=0; column < columns; ++column){
+//			builder.addBoxDoor(column, 0, KeyEvent.VK_DOWN);
+//			builder.addBoxDoor(column, 2, KeyEvent.VK_UP);
+//		}
+//
+//		builder.addDoor(2, 0, KeyEvent.VK_DOWN);
+//		
+//		for(int column=0; column < columns; ++column)
+//		{
+//			for(int row=0; row < rows; ++row)
+//			{
+//				builder.addRoom(column, row);
+//				if(column == columns-1)
+//				{
+//					builder.addWall(column, row, KeyEvent.VK_RIGHT);
+//				}
+//				if(row == rows-1)
+//				{
+//					builder.addWall(column, row, KeyEvent.VK_DOWN);
+//				}
+//				if(row == 0)
+//				{
+//					builder.addWall(column, row, KeyEvent.VK_UP);
+//				}
+//				if(column == 0)
+//				{
+//					builder.addWall(column, row, KeyEvent.VK_LEFT);
+//				}
+//			}
+//		}
+//		builder.createResult();
 	}
 
+	
+	S_Creator prototype = new S_Prototype();
+	
 	/**
 	 * Construction using prototypes.
 	 */
 	public void prototypeConstruction()
 	{
-		S_Prototype<Room> roomPrototype = createPrototype(new Room());
-		S_Prototype<Wall> wallPrototype = createPrototype(new Wall());
-
-		// S_Prototype<BoxDoor> booxDoorPrototype = new S_Prototype<BoxDoor>(new
-		// BoxDoor());
-		Room room;
-		Wall wall;
-		Room[][] roomArray = new Room[3][3];
+		Stable stable = Stable.instance();
 		
-		for(int column=0; column < roomArray.length; ++column)
-		{
-			for(int row=0; row < roomArray[0].length; ++row)
-			{
-				room = roomPrototype.clone();
-				room.move(column, row);
-				if(column == roomArray.length-1)
-				{
-					wall = wallPrototype.clone();
-					wall.orientate(KeyEvent.VK_RIGHT);
-					room.setSide(wall);
-				}
-				if(row == roomArray[0].length-1)
-				{
-					wall = wallPrototype.clone();
-					wall.orientate(KeyEvent.VK_DOWN);
-					room.setSide(wall);
-				}
-				if(row == 0)
-				{
-					wall = wallPrototype.clone();
-					wall.orientate(KeyEvent.VK_UP);
-					room.setSide(wall);
-				}
-				if(column == 0)
-				{
-					wall = wallPrototype.clone();
-					wall.orientate(KeyEvent.VK_LEFT);
-					room.setSide(wall);
-				}
-
-				Stable.instance().addRoom(room);
-				roomArray[column][row] = room;
-			}
-		}
+		// Creating the rooms for the stable
+		prototype.createRoomAt(0, 0);
+		prototype.createRoomAt(1, 0);
+		prototype.createRoomAt(2, 0);
+		prototype.createRoomAt(0, 1);
+		prototype.createRoomAt(1, 1);
+		prototype.createRoomAt(2, 1);
+		prototype.createRoomAt(0, 2);
+		prototype.createRoomAt(1, 2);
+		prototype.createRoomAt(2, 2);
 		
-		//create corridor
-		for(int column=0; column < roomArray.length-1; ++column){
-			wall = wallPrototype.clone();
-			wall.orientate(KeyEvent.VK_RIGHT);
-			roomArray[column][0].setSide(wall);
-			wall = wallPrototype.clone();
-			wall.orientate(KeyEvent.VK_RIGHT);
-			roomArray[column][2].setSide(wall);
+		// Creating West outerwalls
+		prototype.createOuterWall(stable.getRoom(0, 0), KeyEvent.VK_LEFT);
+		prototype.createOuterWall(stable.getRoom(0, 1), KeyEvent.VK_LEFT);
+		prototype.createOuterWall(stable.getRoom(0, 2), KeyEvent.VK_LEFT);		
+		// Creating North outerwalls
+		prototype.createOuterWall(stable.getRoom(0, 0), KeyEvent.VK_UP);
+		prototype.createOuterWall(stable.getRoom(1, 0), KeyEvent.VK_UP);
+		prototype.createOuterWall(stable.getRoom(2, 0), KeyEvent.VK_UP);		
+		// Creating East outerwalls
+		prototype.createOuterWall(stable.getRoom(2, 0), KeyEvent.VK_RIGHT);
+		prototype.createOuterWall(stable.getRoom(2, 1), KeyEvent.VK_RIGHT);
+		prototype.createOuterWall(stable.getRoom(2, 2), KeyEvent.VK_RIGHT);		
+		// Creating South outerwalls
+		prototype.createOuterWall(stable.getRoom(0, 2), KeyEvent.VK_DOWN);
+		prototype.createOuterWall(stable.getRoom(1, 2), KeyEvent.VK_DOWN);
+		prototype.createOuterWall(stable.getRoom(2, 2), KeyEvent.VK_DOWN);
 
-			wall = wallPrototype.clone();
-			wall.orientate(KeyEvent.VK_LEFT);
-			roomArray[column+1][0].setSide(wall);
-			wall = wallPrototype.clone();
-			wall.orientate(KeyEvent.VK_LEFT);
-			roomArray[column+1][2].setSide(wall);
-			
-			roomArray[column][2].setSide(wall);
-			roomArray[column][1].setSide(roomArray[column+1][1]);
-			roomArray[column+1][1].setSide(roomArray[column][1]);
-		}		
-
-		S_Prototype<BoxDoor> boxDoorPrototype = createPrototype(new BoxDoor());
-		BoxDoor boxDoor;
-		for(int column=0; column < roomArray.length; ++column){
-			boxDoor = boxDoorPrototype.clone();
-			boxDoor.move(roomArray[column][1], roomArray[column][0]);
-			roomArray[column][1].setSide(boxDoor);
-			roomArray[column][0].setSide(boxDoor);
-			
-
-			boxDoor = boxDoorPrototype.clone();
-			boxDoor.move(roomArray[column][1], roomArray[column][2]);
-			roomArray[column][1].setSide(boxDoor);
-			roomArray[column][2].setSide(boxDoor);
-		}
+		// Creating North innerwalls
+		prototype.createInnerWall(stable.getRoom(0, 0), KeyEvent.VK_RIGHT);
+		prototype.createInnerWall(stable.getRoom(1, 0), KeyEvent.VK_LEFT);
+		prototype.createInnerWall(stable.getRoom(1, 0), KeyEvent.VK_RIGHT);
+		prototype.createInnerWall(stable.getRoom(2, 0), KeyEvent.VK_LEFT);
+		// Creating South innerwalls
+		prototype.createInnerWall(stable.getRoom(0, 2), KeyEvent.VK_RIGHT);
+		prototype.createInnerWall(stable.getRoom(1, 2), KeyEvent.VK_LEFT);
+		prototype.createInnerWall(stable.getRoom(1, 2), KeyEvent.VK_RIGHT);
+		prototype.createInnerWall(stable.getRoom(2, 2), KeyEvent.VK_LEFT);			
 		
-
-		Door door = new Door(roomArray[2][0],roomArray[2][1]);
-		roomArray[2][1].setSide(door);
-		roomArray[2][0].setSide(door);
+		// Creating Corridor in middle
+		prototype.createCorridoreAt(stable.getRoom(0, 1), stable.getRoom(2, 1));
+		
+		prototype.createDoorBetween(stable.getRoom(0, 0), stable.getRoom(1, 0));
+		
 	}
 
 	public void deconstruct() {

@@ -1,2 +1,5 @@
 1379319550387	Rename type 'S_AbstractCreator'
 1379323278957	Rename field 'boxDoor'
+1379325877603	Rename local variable 'smaller'
+1379325884756	Rename local variable 'bigger'
+1379325898505	Rename method 'connectRooms'
