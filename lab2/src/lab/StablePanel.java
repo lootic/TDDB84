@@ -111,60 +111,12 @@ public class StablePanel extends JPanel {
 	/**
 	 * Construction is made using an Factory.
 	 */
-	public void factoryConstruction()
-	{
-	}
+	public void factoryConstruction(){}
 
 	/**
 	 * Construction using the Builder pattern.
 	 */
-	public void builderConstruction() {
-//		S_Builder builder = createBuilder();
-//		final int columns = 3;
-//		final int rows = 3;
-//		
-//		for(int column=0; column < columns-1; ++column){
-//			builder.addWall(column, 0, KeyEvent.VK_RIGHT);
-//			builder.addWall(column, 2, KeyEvent.VK_RIGHT);
-//
-//			builder.addWall(column+1, 0, KeyEvent.VK_LEFT);
-//			builder.addWall(column+1, 2, KeyEvent.VK_LEFT);
-//			
-//			builder.setCorridor(column, 1, KeyEvent.VK_RIGHT);
-//		}
-//		
-//		for(int column=0; column < columns; ++column){
-//			builder.addBoxDoor(column, 0, KeyEvent.VK_DOWN);
-//			builder.addBoxDoor(column, 2, KeyEvent.VK_UP);
-//		}
-//
-//		builder.addDoor(2, 0, KeyEvent.VK_DOWN);
-//		
-//		for(int column=0; column < columns; ++column)
-//		{
-//			for(int row=0; row < rows; ++row)
-//			{
-//				builder.addRoom(column, row);
-//				if(column == columns-1)
-//				{
-//					builder.addWall(column, row, KeyEvent.VK_RIGHT);
-//				}
-//				if(row == rows-1)
-//				{
-//					builder.addWall(column, row, KeyEvent.VK_DOWN);
-//				}
-//				if(row == 0)
-//				{
-//					builder.addWall(column, row, KeyEvent.VK_UP);
-//				}
-//				if(column == 0)
-//				{
-//					builder.addWall(column, row, KeyEvent.VK_LEFT);
-//				}
-//			}
-//		}
-//		builder.createResult();
-	}
+	public void builderConstruction() {}
 
 	
 	S_Creator prototype = new S_Prototype();
@@ -213,12 +165,13 @@ public class StablePanel extends JPanel {
 		prototype.createInnerWall(stable.getRoom(0, 2), KeyEvent.VK_RIGHT);
 		prototype.createInnerWall(stable.getRoom(1, 2), KeyEvent.VK_LEFT);
 		prototype.createInnerWall(stable.getRoom(1, 2), KeyEvent.VK_RIGHT);
-		prototype.createInnerWall(stable.getRoom(2, 2), KeyEvent.VK_LEFT);			
+		prototype.createInnerWall(stable.getRoom(2, 2), KeyEvent.VK_LEFT);		
+		
+		// Creating North boxDoors
+		prototype.createBoxDoorBetween(stable.getRoom(0, 0), stable.getRoom(0, 1));
 		
 		// Creating Corridor in middle
-		prototype.createCorridoreAt(stable.getRoom(0, 1), stable.getRoom(2, 1));
-		
-		prototype.createDoorBetween(stable.getRoom(0, 0), stable.getRoom(1, 0));
+		prototype.createCorridoreAt(stable.getRoom(0, 1), stable.getRoom(2, 1));	
 		
 	}
 

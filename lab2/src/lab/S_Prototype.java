@@ -5,7 +5,7 @@ import java.awt.event.KeyEvent;
 public class S_Prototype extends S_Creator {
 
 	
-	private Room room = new Room();
+	private Room room = new Room(0, 0);
 	private Door door = new Door(room, room);
 	private BoxDoor boxDoor = new BoxDoor(room, room);
 	private Wall wall = new Wall();
@@ -29,12 +29,7 @@ public class S_Prototype extends S_Creator {
 		setDoorAt(roomA, roomB, (Door) boxDoor.clone());
 	}
 
-	private void connectRoomsAndSetNext(Room from, Room to, int dir) {
-		from.setSide(to);
-		to.setSide(from);
-		from = to;
-		to = getRoomAdjacentTo(from.getX(), to.getX(), dir);
-	}
+
 
 	@Override
 	public void createCorridoreAt(Room from, Room to) {
