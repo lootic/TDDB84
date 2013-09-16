@@ -4,9 +4,10 @@ import java.awt.event.KeyEvent;
 
 public class S_Prototype extends S_Creator {
 
-	private BoxDoor boxDoor = new BoxDoor();
-	private Door door = new Door();
+	
 	private Room room = new Room();
+	private Door door = new Door(room, room);
+	private BoxDoor boxDoor = new BoxDoor(room, room);
 	private Wall wall = new Wall();
 
 	protected void setDoorAt(Room roomA, Room roomB, Door door) 
