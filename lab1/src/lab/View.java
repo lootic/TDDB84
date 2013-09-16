@@ -25,7 +25,6 @@ class View extends Canvas implements Observer
 	protected Trajectory trajectory1, trajectory2;
 
 	View(Model model) {
-
 		width = DFLT_WIDTH;
 		height = DFLT_HEIGHT;
 		trajectory1 = new Trajectory();

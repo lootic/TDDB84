@@ -1,0 +1,8 @@
+package lab;
+
+public interface S_Creator {
+	public void createRoomAt(int x, int y);
+	public void createWallAt(int x, int y, int dir);
+	public void createDoorAt(int x, int y, int dir);
+	public void createCorridoreAt(int x, int y, int dir);
+}
