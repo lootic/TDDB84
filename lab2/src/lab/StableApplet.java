@@ -103,6 +103,7 @@ public class StableApplet extends JApplet implements ActionListener, KeyListener
 
 	public void keyPressed(KeyEvent evt) {
 
+		
 		switch (evt.getKeyCode()) {
 		case 10: // '\n'
 			Person.instance().operateDoor();
