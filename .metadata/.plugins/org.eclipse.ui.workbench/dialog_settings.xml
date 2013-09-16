@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+<<<<<<< HEAD
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item value="1152" key="dialogWidth"/>
 		<item value="602" key="dialogHeight"/>
@@ -11,6 +12,11 @@
 		</list>
 		<list key="textEntries">
 		</list>
+=======
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item value="46" key="DIALOG_Y_ORIGIN"/>
+		<item value="650" key="DIALOG_X_ORIGIN"/>
+>>>>>>> 2d30f96a763d30974459f0b94ef790ec60a5ab36
 	</section>
 	<section name="NewWizardAction">
 	</section>
