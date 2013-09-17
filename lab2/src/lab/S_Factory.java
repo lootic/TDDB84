@@ -1,41 +1,26 @@
 package lab;
 
 //Not really a factory, but with new instructions we need to do it this way to be coherent with other creators
-public class S_Factory extends S_Creator{
+public class S_Factory implements S_Creating {
 
 	@Override
-	public void createBoxDoorBetween(Room roomA, Room roomB) {		
-		BoxDoor door = new BoxDoor(roomA, roomB);
-		roomA.setSide(door);
-		roomB.setSide(door);
+	public BoxDoor createBoxDoor(Room roomA, Room roomB) {
+		return new BoxDoor(roomA, roomB);
 	}
 
 	@Override
-	public void createDoorBetween(Room roomA, Room roomB) {
-		Door door = new Door(roomA, roomB);
-		roomA.setSide(door);
-		roomB.setSide(door);
+	public Door createDoor(Room roomA, Room roomB) {
+		return new Door(roomA, roomB);
 	}
 
 	@Override
-	public void createInnerWall(Room room, int dir) {
-		Wall wall = new Wall(dir);
-		room.setSide(wall);
-		
-		wall = new Wall(getOppositeDirection(dir));
-		room.setSide(wall);
+	public Room createRoom(int x, int y) {
+		return new Room(x, y);
 	}
 
 	@Override
-	public void createOuterWall(Room room, int dir) {
-		Wall wall = new Wall(dir);
-		room.setSide(wall);
-	}
-
-	@Override
-	public void createRoomAt(int x, int y) {
-		Room room = new Room(x, y);
-		Stable.instance().addRoom(room);
+	public Wall createWall(int dir) {
+		return new Wall(dir);
 	}
 
 }
