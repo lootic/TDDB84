@@ -2,8 +2,8 @@ package lab;
 
 import java.awt.event.KeyEvent;
 
-public class S_Prototype extends S_Creator {
-
+public class S_Prototype extends S_Creator
+{
 	
 	private Room room = new Room(0, 0);
 	private Door door = new Door(room, room);
@@ -18,7 +18,8 @@ public class S_Prototype extends S_Creator {
 	}
 	
 	@Override
-	public void createRoomAt(int x, int y) {
+	public void createRoomAt(int x, int y)
+	{
 		Room room = (Room) this.room.clone();
 		room.move(x, y);
 		Stable.instance().addRoom(room);
