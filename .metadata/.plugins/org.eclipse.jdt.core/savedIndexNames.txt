@@ -15,5 +15,4 @@ INDEX VERSION 1.126+C:\Skola\TDDB84\.metadata\.plugins\org.eclipse.jdt.core
 4108727661.index
 1299022128.index
 3946796104.index
-87111012.index
 2620941534.index

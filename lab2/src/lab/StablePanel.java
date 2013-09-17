@@ -26,8 +26,8 @@ public class StablePanel extends JPanel {
 
 		dimension = new Dimension(400, 400);
 		setMinimumSize(dimension);
-		offscreen = a.createImage((int) dimension.getWidth(),
-				(int) dimension.getHeight());
+		offscreen = a.createImage((int) dimension.getWidth(), (int) dimension
+				.getHeight());
 		buffer = offscreen.getGraphics();
 		horses = new ArrayList<Horse>();
 	}
@@ -106,24 +106,22 @@ public class StablePanel extends JPanel {
 		room4.setSide(boxDoor34);
 	}
 
-
-	
 	/**
 	 * Construction is made using an Factory.
 	 */
-	public void factoryConstruction(){}
+	public void factoryConstruction() {
+	}
 
 	/**
 	 * Construction using the Builder pattern.
 	 */
-	public void builderConstruction() {}
+	public void builderConstruction() {
+	}
 
-	
-	S_Creator prototype = new S_Prototype();
-	
 	/**
 	 * Construction using prototypes.
 	 */
+<<<<<<< HEAD
 	public void prototypeConstruction()
 	{
 		Stable stable = Stable.instance();
@@ -172,6 +170,9 @@ public class StablePanel extends JPanel {
 		prototype.createBoxDoorBetween(stable.getRoom(0, 1), stable.getRoom(0, 2));
 		prototype.createBoxDoorBetween(stable.getRoom(1, 1), stable.getRoom(1, 2));
 		prototype.createBoxDoorBetween(stable.getRoom(2, 1), stable.getRoom(2, 2));					
+=======
+	public void prototypeConstruction() {
+>>>>>>> 8a1f2b35f441d725cbe1067b0d6f72b07dd01bbc
 	}
 
 	public void deconstruct() {

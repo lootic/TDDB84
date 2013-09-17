@@ -1,58 +1,49 @@
 package lab;
 
+<<<<<<< HEAD
 import java.awt.event.KeyEvent;
 
 public class S_Prototype extends S_Creator
 {
 	
+=======
+public class S_Prototype implements S_Creating {
+>>>>>>> 8a1f2b35f441d725cbe1067b0d6f72b07dd01bbc
 	private Room room = new Room(0, 0);
 	private Door door = new Door(room, room);
 	private BoxDoor boxDoor = new BoxDoor(room, room);
 	private Wall wall = new Wall();
-
-	protected void setDoorAt(Room roomA, Room roomB, Door door) 
-	{
-		roomA.setSide(door);
-		roomB.setSide(door);
-		door.move(roomA, roomB);
-	}
 	
 	@Override
+<<<<<<< HEAD
 	public void createRoomAt(int x, int y)
 	{
 		Room room = (Room) this.room.clone();
 		room.move(x, y);
 		Stable.instance().addRoom(room);
+=======
+	public BoxDoor createBoxDoor(Room roomA, Room roomB) {
+		boxDoor = (BoxDoor) boxDoor.clone();
+		boxDoor.move(roomA, roomB);
+		return boxDoor;
+>>>>>>> 8a1f2b35f441d725cbe1067b0d6f72b07dd01bbc
 	}
-
 	@Override
-	public void createBoxDoorBetween(Room roomA, Room roomB) {
-		setDoorAt(roomA, roomB, (Door) boxDoor.clone());
+	public Door createDoor(Room roomA, Room roomB) {
+		door = (Door) door.clone();
+		door.move(roomA, roomB);
+		return door;
 	}
-
-
-
 	@Override
-	public void createDoorBetween(Room roomA, Room roomB) {
-		setDoorAt(roomA, roomB, (Door) door.clone());
+	public Room createRoom(int x, int y) {
+		room = (Room) room.clone();
+		room.move(x, y);
+		return room;
 	}
-
 	@Override
-	public void createInnerWall(Room room, int dir) {
+	public Wall createWall(int dir) {
 		wall = (Wall) wall.clone();
 		wall.orientate(dir);
-		room.setSide(wall);				
-		
-		wall = (Wall) wall.clone();
-		wall.orientate(getOppositeDirection(dir));
-		getRoomAdjacentTo(room.getX(), room.getY(), dir).setSide(wall);
+		return wall;
 	}
-
-	@Override
-	public void createOuterWall(Room room, int dir) {
-		wall = (Wall) wall.clone();
-		wall.orientate(dir);
-		room.setSide(wall);
-	}
-
 }

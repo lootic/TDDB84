@@ -4,8 +4,7 @@ import java.util.Observable;
 
 // YOUR CODE HERE
 // Replace "extends Object" with something more suitable.
-class Model extends Observable implements Runnable
-{
+class Model extends Observable implements Runnable {
 // END OF YOUR CODE
 
 	protected Coord x0, v0, x1, v1;
@@ -60,8 +59,9 @@ class Model extends Observable implements Runnable
 			new Coord(x00[0], x00[1]), new Coord(x10[0], x10[1]));
 
 		// YOUR CODE HERE
-		hasChanged();
-		notifyObservers(newState);
+		// The model has a new state. What does it do with it?
+		this.setChanged();
+		this.notifyObservers(newState);
 		// END OF YOUR CODE
 
 		while (running) {
@@ -83,8 +83,9 @@ class Model extends Observable implements Runnable
 
 			// YOUR CODE HERE
 			// The model has a new state. What does it do with it?
-			hasChanged();
-			notifyObservers(newState);
+			//this.setChanged();
+			this.setChanged();
+			this.notifyObservers(newState);
 			// END OF YOUR CODE
 
 			try {
