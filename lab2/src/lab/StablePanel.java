@@ -122,6 +122,7 @@ public class StablePanel extends JPanel {
 	 * Construction using prototypes.
 	 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public void prototypeConstruction()
 	{
 		Stable stable = Stable.instance();
@@ -170,6 +171,9 @@ public class StablePanel extends JPanel {
 		prototype.createBoxDoorBetween(stable.getRoom(0, 1), stable.getRoom(0, 2));
 		prototype.createBoxDoorBetween(stable.getRoom(1, 1), stable.getRoom(1, 2));
 		prototype.createBoxDoorBetween(stable.getRoom(2, 1), stable.getRoom(2, 2));					
+=======
+	public void prototypeConstruction() {
+>>>>>>> 8a1f2b35f441d725cbe1067b0d6f72b07dd01bbc
 =======
 	public void prototypeConstruction() {
 >>>>>>> 8a1f2b35f441d725cbe1067b0d6f72b07dd01bbc

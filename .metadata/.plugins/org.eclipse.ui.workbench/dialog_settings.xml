@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+<<<<<<< HEAD
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item value="1152" key="dialogWidth"/>
 		<item value="602" key="dialogHeight"/>
@@ -18,4 +19,6 @@
 			<item value="org.eclipse.ui.Basic"/>
 		</list>
 	</section>
+=======
+>>>>>>> 8a1f2b35f441d725cbe1067b0d6f72b07dd01bbc
 </section>
