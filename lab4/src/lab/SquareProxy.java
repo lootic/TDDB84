@@ -38,12 +38,14 @@ public class SquareProxy extends AbstractSquare {
 		if (!open) {
 			open = true;
 			shape = this;
-		} else {
+		} else
+		{
 			// YOUR CODE HERE
 			// Any additions?
 			// END OF YOUR CODE
 
-			if (shape == null) {
+			if (shape == null)
+			{
 				open = false;
 				shape = this;
 			}
