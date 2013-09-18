@@ -34,6 +34,7 @@ public class S_ShapeIterator extends AbstractIterator {
 	public void next() {
 		if (iterator.hasNext()) {
 			current = iterator.next();
+			System.out.println(current.toString());
 		} else {
 			current = null;
 		}
