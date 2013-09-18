@@ -15,11 +15,12 @@ public class SquareProxy extends AbstractSquare {
 	private boolean open = true;
 	private Square realSquare;
 
-	// YOUR CODE HERE
-	// Any missing methods?
-	// END OF YOUR CODE
+	private void createRealSquare() {
+		realSquare = new Square();
+	}
 
 	public SquareProxy() {
+		createRealSquare();
 	}
 
 	/**
@@ -39,10 +40,6 @@ public class SquareProxy extends AbstractSquare {
 			open = true;
 			shape = this;
 		} else {
-			// YOUR CODE HERE
-			// Any additions?
-			// END OF YOUR CODE
-
 			if (shape == null) {
 				open = false;
 				shape = this;
@@ -58,11 +55,9 @@ public class SquareProxy extends AbstractSquare {
 	public void paint(Graphics g) {
 
 		if (open) {
-			// YOUR CODE HERE
-			// Any changes?
 			g.setColor(Color.orange);
 			g.fillRect(getX(), getY(), getWidth(), getHeight());
-			// END OF YOUR CODE
+			paintChildren(g); // added
 		} else {
 			g.setColor(Color.black);
 			g.fillRect(getX(), getY(), getWidth(), getHeight());
@@ -73,8 +68,7 @@ public class SquareProxy extends AbstractSquare {
 	 * Draws the children of the proxy.
 	 */
 	public void paintChildren(Graphics g) {
-
-		// YOUR CODE HERE
+		realSquare.paintChildren(g);
 	}
 
 	/**
@@ -83,30 +77,36 @@ public class SquareProxy extends AbstractSquare {
 	 */
 	public AbstractList<AbstractShape> getListOfShapes(
 			AbstractList<AbstractShape> list) {
-		list.add(this);
-		return list;
+		if (open) { // added
+			list.add(this);
+			realSquare.getListOfShapes(list); // added
+			list.remove(realSquare); //will do
+			return list;
+		} else { // added
+			list.add(this); // added
+			return list; // added
+		}
 	}
 
 	/**
 	 * Accepts a Visitor.
 	 */
 	public void accept(AbstractVisitor v) {
-		v.visit(this);
+		v.visit(this); // added
 	}
 
 	/**
 	 * Adds a child.
 	 */
 	public void addChild(AbstractShape child) {
-
+		realSquare.addChild(child);
 	}
 
 	/**
 	 * Used to check if there are any children.
 	 */
 	public boolean hasChildren() {
-		return false;
-		//return open ? realSquare.hasChildren() : false;
+		 return open ? realSquare.hasChildren() : false;
 	}
 
 	/**
@@ -117,6 +117,5 @@ public class SquareProxy extends AbstractSquare {
 			throw new NoSuchElementException();
 		}
 		return realSquare.getLastChild();
-		// END OF YOUR CODE
 	}
 }
