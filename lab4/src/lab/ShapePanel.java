@@ -41,11 +41,12 @@ public class ShapePanel extends JPanel {
 	public void paint(Graphics g) {
 
 		super.paint(g);
-
+		
 		if (AbstractShape.paintChildren) {
 			root.paint(g);
 		} else if (paintVisitor)
 		{
+			visitor.setGraphics(g);
 			applyVisitor();			
 		} else if (paintIterator) {
 			// YOUR CODE HERE
@@ -98,6 +99,7 @@ public class ShapePanel extends JPanel {
 		// YOUR CODE HERE
 		// Place the code to count the shapes using the Visitor.
 		// END OF YOUR CODE
+		root.accept(visitor);
 
 		
 		ShapeApplet.setOutputText(

@@ -1,5 +1,7 @@
 package lab;
 
+import java.awt.Graphics;
+
 /**
  * An abstract class describing how a visitor looks like.
  * 
@@ -8,6 +10,7 @@ package lab;
 public abstract class AbstractVisitor {
 
 	protected int numberOfVisits = 0;
+	protected Graphics g;
 
 	/**
 	 * Visits a square.
@@ -28,6 +31,9 @@ public abstract class AbstractVisitor {
 	 * Visits a triangle.
 	 */
 	public abstract void visit(Triangle t);
+	
+
+	public abstract void visit(SquareProxy s);
 
 	/**
 	 * Sets the number of visits to 0
@@ -44,5 +50,9 @@ public abstract class AbstractVisitor {
 	 */
 	public int numberOfVisits() {
 		return numberOfVisits;
+	}
+
+	public void setGraphics(Graphics g) {
+		this.g = g;
 	}
 }

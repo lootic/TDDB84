@@ -110,77 +110,84 @@ public class StablePanel extends JPanel {
 	 * Construction is made using an Factory.
 	 */
 	public void factoryConstruction() {
+		S_Blueprints.STABLE_3x3.construct(new S_Factory());
 	}
 
 	/**
 	 * Construction using the Builder pattern.
 	 */
 	public void builderConstruction() {
+		S_Builder builder = new S_Builder(Stable.instance());
+		builder.addRoom(0, 0);
+		builder.addRoom(0, 1);
+		builder.addRoom(0, 2);
+		builder.addRoom(1, 0);
+		builder.addRoom(1, 1);
+		builder.addRoom(1, 2);
+		builder.addRoom(2, 0);
+		builder.addRoom(2, 1);
+		builder.addRoom(2, 2);
+		
+		// Creating West outerwalls
+		builder.addWall(0, 0, KeyEvent.VK_LEFT);
+		builder.addWall(0, 1, KeyEvent.VK_LEFT);
+		builder.addWall(0, 2, KeyEvent.VK_LEFT);
+		
+		// Creating North outerwalls
+		builder.addWall(0, 0, KeyEvent.VK_UP);
+		builder.addWall(1, 0, KeyEvent.VK_UP);
+		builder.addWall(2, 0, KeyEvent.VK_UP);
+		
+		// Creating East outerwalls
+		builder.addWall(2, 0, KeyEvent.VK_RIGHT);
+		builder.addWall(2, 1, KeyEvent.VK_RIGHT);
+		builder.addWall(2, 2, KeyEvent.VK_RIGHT);
+		
+		// Creating South outerwalls
+		builder.addWall(0, 2, KeyEvent.VK_DOWN);
+		builder.addWall(1, 2, KeyEvent.VK_DOWN);
+		builder.addWall(2, 2, KeyEvent.VK_DOWN);
+		
+		// Creating North innerwalls
+		builder.addWall(1, 0, KeyEvent.VK_LEFT);
+		builder.addWall(0, 0, KeyEvent.VK_RIGHT);
+		
+		builder.addWall(2, 0, KeyEvent.VK_LEFT);
+		builder.addWall(1, 0, KeyEvent.VK_RIGHT);
+		
+		
+		// Creating South innerwalls
+		builder.addWall(1, 2, KeyEvent.VK_LEFT);
+		builder.addWall(0, 2, KeyEvent.VK_RIGHT);
+		
+		builder.addWall(2, 2, KeyEvent.VK_LEFT);
+		builder.addWall(1, 2, KeyEvent.VK_RIGHT);
+		
+		// Creating North Doors
+		builder.addBoxDoor(0, 0, KeyEvent.VK_DOWN);
+		builder.addBoxDoor(1, 0, KeyEvent.VK_DOWN);
+		builder.addDoor(2, 0, KeyEvent.VK_DOWN);
+		
+		// Creating South Doors
+		builder.addBoxDoor(0, 1, KeyEvent.VK_DOWN);
+		builder.addBoxDoor(1, 1, KeyEvent.VK_DOWN);
+		builder.addBoxDoor(2, 1, KeyEvent.VK_DOWN);
+		
+		// Create Corridor
+		builder.setCorridor(0, 1, KeyEvent.VK_RIGHT);
+		builder.setCorridor(1, 1, KeyEvent.VK_RIGHT);
+		
+		builder.createResult();
 	}
 
 	/**
 	 * Construction using prototypes.
 	 */
-<<<<<<< HEAD
-<<<<<<< HEAD
-	public void prototypeConstruction()
-	{
-		Stable stable = Stable.instance();
-		
-		// Creating the rooms for the stable
-		prototype.createRoomAt(0, 0);
-		prototype.createRoomAt(1, 0);
-		prototype.createRoomAt(2, 0);
-		prototype.createRoomAt(0, 1);
-		prototype.createRoomAt(1, 1);
-		prototype.createRoomAt(2, 1);
-		prototype.createRoomAt(0, 2);
-		prototype.createRoomAt(1, 2);
-		prototype.createRoomAt(2, 2);
-		
-		// Creating West outerwalls
-		prototype.createOuterWall(stable.getRoom(0, 0), KeyEvent.VK_LEFT);
-		prototype.createOuterWall(stable.getRoom(0, 1), KeyEvent.VK_LEFT);
-		prototype.createOuterWall(stable.getRoom(0, 2), KeyEvent.VK_LEFT);		
-		// Creating North outerwalls
-		prototype.createOuterWall(stable.getRoom(0, 0), KeyEvent.VK_UP);
-		prototype.createOuterWall(stable.getRoom(1, 0), KeyEvent.VK_UP);
-		prototype.createOuterWall(stable.getRoom(2, 0), KeyEvent.VK_UP);		
-		// Creating East outerwalls
-		prototype.createOuterWall(stable.getRoom(2, 0), KeyEvent.VK_RIGHT);
-		prototype.createOuterWall(stable.getRoom(2, 1), KeyEvent.VK_RIGHT);
-		prototype.createOuterWall(stable.getRoom(2, 2), KeyEvent.VK_RIGHT);		
-		// Creating South outerwalls
-		prototype.createOuterWall(stable.getRoom(0, 2), KeyEvent.VK_DOWN);
-		prototype.createOuterWall(stable.getRoom(1, 2), KeyEvent.VK_DOWN);
-		prototype.createOuterWall(stable.getRoom(2, 2), KeyEvent.VK_DOWN);
-
-		// Creating North innerwalls
-		prototype.createInnerWall(stable.getRoom(0, 0), KeyEvent.VK_RIGHT);
-		prototype.createInnerWall(stable.getRoom(1, 0), KeyEvent.VK_RIGHT);
-		// Creating South innerwalls
-		prototype.createInnerWall(stable.getRoom(0, 2), KeyEvent.VK_RIGHT);
-		prototype.createInnerWall(stable.getRoom(1, 2), KeyEvent.VK_RIGHT);	
-		
-		// Creating North Doors
-		prototype.createBoxDoorBetween(stable.getRoom(0, 0), stable.getRoom(0, 1));
-		prototype.createBoxDoorBetween(stable.getRoom(1, 0), stable.getRoom(1, 1));
-		prototype.createDoorBetween(stable.getRoom(2, 0), stable.getRoom(2, 1));
-		
-		// Creating Soth Doors
-		prototype.createBoxDoorBetween(stable.getRoom(0, 1), stable.getRoom(0, 2));
-		prototype.createBoxDoorBetween(stable.getRoom(1, 1), stable.getRoom(1, 2));
-		prototype.createBoxDoorBetween(stable.getRoom(2, 1), stable.getRoom(2, 2));					
-=======
 	public void prototypeConstruction() {
->>>>>>> 8a1f2b35f441d725cbe1067b0d6f72b07dd01bbc
-=======
-	public void prototypeConstruction() {
->>>>>>> 8a1f2b35f441d725cbe1067b0d6f72b07dd01bbc
+		S_Blueprints.STABLE_3x3.construct(new S_Prototype());
 	}
 
 	public void deconstruct() {
-
 		Iterator<Horse> iterator = horses.iterator();
 
 		while (iterator.hasNext())
@@ -189,7 +196,4 @@ public class StablePanel extends JPanel {
 		horses.clear();
 		Stable.instance().deconstruct();
 	}
-
-	// YOUR CODE HERE
-	// May be something else is missing?
 }

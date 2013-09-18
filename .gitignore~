@@ -2,7 +2,11 @@
 ## Eclipse
 #################
 
-*/bin
+*.class
+.metadata
+*/.plugin/
+*bin
+*/bin/
 *.pydevproject
 .metadata
 bin/
