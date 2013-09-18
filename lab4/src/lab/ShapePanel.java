@@ -19,6 +19,7 @@ public class ShapePanel extends JPanel {
 	private boolean paintVisitor = false;
 	private boolean paintIterator = false;
 	private AbstractVisitor visitor = new S_ShapeVisitor();
+	private Graphics currentGraphics;
 
 	public ShapePanel() {
 
@@ -48,6 +49,7 @@ public class ShapePanel extends JPanel {
 			visitor.setGraphics(g);
 			applyVisitor();
 		} else if (paintIterator) {
+			currentGraphics = g;
 			applyIterator();
 		}
 
@@ -107,7 +109,7 @@ public class ShapePanel extends JPanel {
 
 		while (!iterator.isDone()) {
 			++totalNumber;
-			((AbstractShape) iterator.currentItem()).paint(getGraphics());
+			((AbstractShape) iterator.currentItem()).paint(currentGraphics);
 			iterator.next();
 		}
 
