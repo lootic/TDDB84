@@ -146,8 +146,6 @@ public class S_Builder {
 		sides.add(new Runnable() {
 			@Override
 			public void run() {
-				System.out.println(Integer.toString(xLocal) + " "
-						+ Integer.toString(yLocal));
 				rooms.get(Integer.toString(xLocal) + Integer.toString(yLocal))
 						.setSide(new Wall(dirLocal));
 				;

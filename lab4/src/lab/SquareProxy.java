@@ -6,7 +6,7 @@ import java.util.AbstractList;
 
 /**
  * This is the class where the students implements the proxy for the square.
- *
+ * 
  * @author Peter Sunnergren
  */
 public class SquareProxy extends AbstractSquare {
@@ -19,13 +19,14 @@ public class SquareProxy extends AbstractSquare {
 
 	/**
 	 * Gets the marked shape. Checks this shape if it is open.
-	 *
+	 * 
 	 * @return This if it is marked and null otherwise.
 	 */
 	public AbstractShape getMarkedShape(int cx, int cy) {
 
-		if ((getX() > cx) || (getX() + getWidth() < cx) ||
-			(getY() > cy) || (getY() + getHeight() < cy)) return null;
+		if ((getX() > cx) || (getX() + getWidth() < cx) || (getY() > cy)
+				|| (getY() + getHeight() < cy))
+			return null;
 
 		AbstractShape shape = null;
 
@@ -72,11 +73,11 @@ public class SquareProxy extends AbstractSquare {
 	}
 
 	/**
-	 * Adds the proxy to the list of shapes.
-	 * Only adds the children if the proxy is open.
+	 * Adds the proxy to the list of shapes. Only adds the children if the proxy
+	 * is open.
 	 */
-	public AbstractList<AbstractShape>
-		getListOfShapes(AbstractList<AbstractShape> list) {
+	public AbstractList<AbstractShape> getListOfShapes(
+			AbstractList<AbstractShape> list) {
 
 		// YOUR CODE HERE
 		// END OF YOUR CODE
@@ -88,8 +89,7 @@ public class SquareProxy extends AbstractSquare {
 	 * Accepts a Visitor.
 	 */
 	public void accept(AbstractVisitor v) {
-
-		// YOUR CODE HERE
+		v.visit(this);
 	}
 
 	/**

@@ -1,7 +1,7 @@
 package lab;
 
 //Not really a factory, but with new instructions we need to do it this way to be coherent with other creators
-public class S_Factory implements S_Creating {
+public class S_Factory implements S_Creator {
 
 	@Override
 	public BoxDoor createBoxDoor(Room roomA, Room roomB) {

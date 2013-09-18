@@ -1,5 +1,6 @@
 package lab;
 
+<<<<<<< HEAD
 
 import java.awt.event.KeyEvent;
 
@@ -9,27 +10,23 @@ public class S_Prototype extends
 
 
 public class S_Prototype implements S_Creating {
+=======
+public class S_Prototype implements S_Creator {
+>>>>>>> fa0e003f130c8ca9a08d696639f2a312632272dd
 	private Room room = new Room(0, 0);
 	private Door door = new Door(room, room);
 	private BoxDoor boxDoor = new BoxDoor(room, room);
 	private Wall wall = new Wall();
 	
 	@Override
-<<<<<<< HEAD
-<<<<<<< HEAD
-	public void createRoomAt(int x, int y)
-	{
-		Room room = (Room) this.room.clone();
-		room.move(x, y);
-		Stable.instance().addRoom(room);
-=======
-=======
->>>>>>> 8a1f2b35f441d725cbe1067b0d6f72b07dd01bbc
 	public BoxDoor createBoxDoor(Room roomA, Room roomB) {
 		boxDoor = (BoxDoor) boxDoor.clone();
 		boxDoor.move(roomA, roomB);
 		return boxDoor;
+<<<<<<< HEAD
 
+=======
+>>>>>>> fa0e003f130c8ca9a08d696639f2a312632272dd
 	}
 	@Override
 	public Door createDoor(Room roomA, Room roomB) {
