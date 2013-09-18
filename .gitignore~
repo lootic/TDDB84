@@ -6,7 +6,7 @@
 .metadata
 */.plugin/
 *bin
-*/bin/
+*bin/
 *.pydevproject
 .metadata
 bin/
@@ -17,6 +17,11 @@ tmp/
 *~.nib
 local.properties
 .loadpath
+lab2/bin/
+lab1/bin/
+lab3/bin/
+lab4/bin/
+lab5/bin/
 
 # External tool builders
 .externalToolBuilders/
