@@ -19,6 +19,7 @@ public class ShapePanel extends JPanel {
 	private boolean paintVisitor = false;
 	private boolean paintIterator = false;
 	private AbstractVisitor visitor = new S_ShapeVisitor();
+	private AbstractIterator iterator;
 	
 
 	public ShapePanel () {
@@ -32,6 +33,7 @@ public class ShapePanel extends JPanel {
 		root.setHeight(400);
 		root.setWidth(400);
 		Marked.markShape(root);
+		iterator = new S_ShapeIterator(root);
 	}
 
 	/**
@@ -48,14 +50,10 @@ public class ShapePanel extends JPanel {
 		}
 		else if (paintVisitor)		
 		{
-			
 			visitor.setGraphics(g);
-
 			applyVisitor();			
 		} else if (paintIterator) {
-			// YOUR CODE HERE
-			// Place the code to draw with the Iterator.
-			// END OF YOUR CODE
+			applyIterator();
 		}
 
 		Marked.paint(g);
@@ -98,13 +96,7 @@ public class ShapePanel extends JPanel {
 	 * Applies the Visitor to the root shape.
 	 */
 	public void applyVisitor() {
-
-
-		// YOUR CODE HERE
-		// Place the code to count the shapes using the Visitor.
-		// END OF YOUR CODE
 		root.accept(visitor);
-
 		
 		ShapeApplet.setOutputText(
 			"Number of shapes: " + String.valueOf(visitor.numberOfVisits()));
@@ -117,10 +109,12 @@ public class ShapePanel extends JPanel {
 	public void applyIterator() {
 
 		int totalNumber = 0;
-
-		// YOUR CODE HERE
-		// Place the code to count the shapes using the Iterator.
-		// END OF YOUR CODE
+		
+		while(!iterator.isDone()){
+			++totalNumber;
+			((AbstractShape)iterator.currentItem()).paint(getGraphics());
+			iterator.next();
+		}
 
 		ShapeApplet.setOutputText(
 			"Number of shapes: " + String.valueOf(totalNumber));
