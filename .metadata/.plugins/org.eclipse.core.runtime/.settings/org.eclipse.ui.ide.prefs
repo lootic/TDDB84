@@ -1,17 +1,10 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=8a1f2b35f441d725cbe1067b0d6f72b07dd01bbc
 EXIT_PROMPT_ON_CLOSE_LAST_WINDOW=false
 PROBLEMS_FILTERS_MIGRATE=true
 TASKS_FILTERS_MIGRATE=true
-=======
-#Tue Sep 17 17:39:56 CEST 2013
->>>>>>> 8a1f2b35f441d725cbe1067b0d6f72b07dd01bbc
-=======
-#Tue Sep 17 17:39:56 CEST 2013
->>>>>>> 8a1f2b35f441d725cbe1067b0d6f72b07dd01bbc
 eclipse.preferences.version=1
-TASKS_FILTERS_MIGRATE=true
+platformState=1377458593285
+quickStart=false
 tipsAndTricks=true
-platformState=1378920747356
-quickStart=true
-PROBLEMS_FILTERS_MIGRATE=true

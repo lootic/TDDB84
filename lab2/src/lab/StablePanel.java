@@ -121,63 +121,13 @@ public class StablePanel extends JPanel {
 	/**
 	 * Construction using prototypes.
 	 */
-<<<<<<< HEAD
-<<<<<<< HEAD
+	
 	public void prototypeConstruction()
 	{
 		Stable stable = Stable.instance();
-		
-		// Creating the rooms for the stable
-		prototype.createRoomAt(0, 0);
-		prototype.createRoomAt(1, 0);
-		prototype.createRoomAt(2, 0);
-		prototype.createRoomAt(0, 1);
-		prototype.createRoomAt(1, 1);
-		prototype.createRoomAt(2, 1);
-		prototype.createRoomAt(0, 2);
-		prototype.createRoomAt(1, 2);
-		prototype.createRoomAt(2, 2);
-		
-		// Creating West outerwalls
-		prototype.createOuterWall(stable.getRoom(0, 0), KeyEvent.VK_LEFT);
-		prototype.createOuterWall(stable.getRoom(0, 1), KeyEvent.VK_LEFT);
-		prototype.createOuterWall(stable.getRoom(0, 2), KeyEvent.VK_LEFT);		
-		// Creating North outerwalls
-		prototype.createOuterWall(stable.getRoom(0, 0), KeyEvent.VK_UP);
-		prototype.createOuterWall(stable.getRoom(1, 0), KeyEvent.VK_UP);
-		prototype.createOuterWall(stable.getRoom(2, 0), KeyEvent.VK_UP);		
-		// Creating East outerwalls
-		prototype.createOuterWall(stable.getRoom(2, 0), KeyEvent.VK_RIGHT);
-		prototype.createOuterWall(stable.getRoom(2, 1), KeyEvent.VK_RIGHT);
-		prototype.createOuterWall(stable.getRoom(2, 2), KeyEvent.VK_RIGHT);		
-		// Creating South outerwalls
-		prototype.createOuterWall(stable.getRoom(0, 2), KeyEvent.VK_DOWN);
-		prototype.createOuterWall(stable.getRoom(1, 2), KeyEvent.VK_DOWN);
-		prototype.createOuterWall(stable.getRoom(2, 2), KeyEvent.VK_DOWN);
-
-		// Creating North innerwalls
-		prototype.createInnerWall(stable.getRoom(0, 0), KeyEvent.VK_RIGHT);
-		prototype.createInnerWall(stable.getRoom(1, 0), KeyEvent.VK_RIGHT);
-		// Creating South innerwalls
-		prototype.createInnerWall(stable.getRoom(0, 2), KeyEvent.VK_RIGHT);
-		prototype.createInnerWall(stable.getRoom(1, 2), KeyEvent.VK_RIGHT);	
-		
-		// Creating North Doors
-		prototype.createBoxDoorBetween(stable.getRoom(0, 0), stable.getRoom(0, 1));
-		prototype.createBoxDoorBetween(stable.getRoom(1, 0), stable.getRoom(1, 1));
-		prototype.createDoorBetween(stable.getRoom(2, 0), stable.getRoom(2, 1));
-		
-		// Creating Soth Doors
-		prototype.createBoxDoorBetween(stable.getRoom(0, 1), stable.getRoom(0, 2));
-		prototype.createBoxDoorBetween(stable.getRoom(1, 1), stable.getRoom(1, 2));
-		prototype.createBoxDoorBetween(stable.getRoom(2, 1), stable.getRoom(2, 2));					
-=======
-	public void prototypeConstruction() {
->>>>>>> 8a1f2b35f441d725cbe1067b0d6f72b07dd01bbc
-=======
-	public void prototypeConstruction() {
->>>>>>> 8a1f2b35f441d725cbe1067b0d6f72b07dd01bbc
+							
 	}
+
 
 	public void deconstruct() {
 

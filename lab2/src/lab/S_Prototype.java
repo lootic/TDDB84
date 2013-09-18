@@ -1,18 +1,14 @@
 package lab;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 import java.awt.event.KeyEvent;
 
-public class S_Prototype extends S_Creator
+public class S_Prototype extends 
 {
 	
-=======
+
+
 public class S_Prototype implements S_Creating {
->>>>>>> 8a1f2b35f441d725cbe1067b0d6f72b07dd01bbc
-=======
-public class S_Prototype implements S_Creating {
->>>>>>> 8a1f2b35f441d725cbe1067b0d6f72b07dd01bbc
 	private Room room = new Room(0, 0);
 	private Door door = new Door(room, room);
 	private BoxDoor boxDoor = new BoxDoor(room, room);
