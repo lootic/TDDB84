@@ -29,10 +29,7 @@ public class S_Prototype implements S_Creating {
 		boxDoor = (BoxDoor) boxDoor.clone();
 		boxDoor.move(roomA, roomB);
 		return boxDoor;
-<<<<<<< HEAD
->>>>>>> 8a1f2b35f441d725cbe1067b0d6f72b07dd01bbc
-=======
->>>>>>> 8a1f2b35f441d725cbe1067b0d6f72b07dd01bbc
+
 	}
 	@Override
 	public Door createDoor(Room roomA, Room roomB) {

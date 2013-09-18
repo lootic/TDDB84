@@ -43,7 +43,8 @@ abstract public class AbstractShape {
 		 */
 		AbstractShape sibling = this.getSibling();
 		removeOverlap(addedRectangleIn);
-		if(sibling != null) {
+		if(sibling != null)
+		{
 			sibling.handleOverlapOf(addedRectangleIn);
 		}
 	}

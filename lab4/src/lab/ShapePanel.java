@@ -19,6 +19,7 @@ public class ShapePanel extends JPanel {
 	private boolean paintVisitor = false;
 	private boolean paintIterator = false;
 	private AbstractVisitor visitor = new S_ShapeVisitor();
+	
 
 	public ShapePanel () {
 
@@ -44,8 +45,10 @@ public class ShapePanel extends JPanel {
 
 		if (AbstractShape.paintChildren) {
 			root.paint(g);
-		} else if (paintVisitor)
+		}
+		else if (paintVisitor)		
 		{
+			
 			applyVisitor();			
 		} else if (paintIterator) {
 			// YOUR CODE HERE

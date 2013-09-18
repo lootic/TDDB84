@@ -5,7 +5,8 @@ package lab;
  * 
  * @author Peter Sunnergren
  */
-public abstract class AbstractVisitor {
+public abstract class AbstractVisitor
+{
 
 	protected int numberOfVisits = 0;
 
