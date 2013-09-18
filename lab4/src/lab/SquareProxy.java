@@ -3,6 +3,7 @@ package lab;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.AbstractList;
+import java.util.NoSuchElementException;
 
 /**
  * This is the class where the students implements the proxy for the square.
@@ -12,10 +13,14 @@ import java.util.AbstractList;
 public class SquareProxy extends AbstractSquare {
 
 	private boolean open = true;
+	private Square realSquare;
 
 	// YOUR CODE HERE
 	// Any missing methods?
 	// END OF YOUR CODE
+
+	public SquareProxy() {
+	}
 
 	/**
 	 * Gets the marked shape. Checks this shape if it is open.
@@ -78,10 +83,7 @@ public class SquareProxy extends AbstractSquare {
 	 */
 	public AbstractList<AbstractShape> getListOfShapes(
 			AbstractList<AbstractShape> list) {
-
-		// YOUR CODE HERE
-		// END OF YOUR CODE
-
+		list.add(this);
 		return list;
 	}
 
@@ -97,26 +99,24 @@ public class SquareProxy extends AbstractSquare {
 	 */
 	public void addChild(AbstractShape child) {
 
-		// YOUR CODE HERE
 	}
 
 	/**
 	 * Used to check if there are any children.
 	 */
 	public boolean hasChildren() {
-
-		// YOUR CODE HERE
 		return false;
-		// END OF YOUR CODE
+		//return open ? realSquare.hasChildren() : false;
 	}
 
 	/**
 	 * Gets the last child in the list of children.
 	 */
 	public AbstractShape getLastChild() {
-
-		// YOUR CODE HERE
-		return null;
+		if (!open) {
+			throw new NoSuchElementException();
+		}
+		return realSquare.getLastChild();
 		// END OF YOUR CODE
 	}
 }

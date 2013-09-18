@@ -10,18 +10,24 @@ public class S_ShapeIterator extends AbstractIterator {
 	private AbstractShape current;
 
 	S_ShapeIterator(AbstractSquare root) {
-		System.out.println("S_ShapeIterator Constructor ("+ root.toString()+")");
+		System.out.print("new S_ShapeIterator("+ root.toString()+")");
 		this.list = root.getListOfShapes(new ArrayList<AbstractShape>());
-		System.out.println(list.toString());
-		first();
+		System.out.println(" {list="+ list.toString());
+		this.iterator = list.iterator();	
+		if (iterator.hasNext()) {
+			current = iterator.next();
+		} else {
+			current = null;
+		}
+		System.out.println(", iterator="+iterator.toString()+ ", current="+current.toString()+"}");
 	}
 
 	@Override
 	public Object currentItem() {
 		if (current == null)
-			System.out.println("currentItem(), return: " + null);
+			System.out.println("currentItem(): " + null);
 		else
-			System.out.println("currentItem(), return: " + current.toString());
+			System.out.println("currentItem(): " + current.toString());
 		return current;
 	}
 
@@ -34,7 +40,8 @@ public class S_ShapeIterator extends AbstractIterator {
 
 	@Override
 	public boolean isDone() {
-		System.out.println("isDone(), return: " + current == null);
+		System.out.print("isDone(): ");
+		System.out.println(current == null);
 		return current == null;
 	}
 
