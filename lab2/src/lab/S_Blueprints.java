@@ -4,6 +4,10 @@ import java.awt.event.KeyEvent;
 
 public class S_Blueprints {
 	
+	private S_Blueprints() {
+		//make it impossible to initialize this object
+	}
+	
 	public static final Blueprint STABLE_3x3 = new Blueprint() {
 		@Override
 		public void construct(S_Creator creator) {

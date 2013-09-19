@@ -1,9 +1,12 @@
 package lab;
 
+<<<<<<< HEAD
 
 import java.awt.event.KeyEvent;	
 
 
+=======
+>>>>>>> 8ddfbaf42d1ebca7720760ee9866b5c7bb336fd4
 public class S_Prototype implements S_Creator {
 	private Room room = new Room(0, 0);
 	private Door door = new Door(room, room);
@@ -15,7 +18,10 @@ public class S_Prototype implements S_Creator {
 		boxDoor = (BoxDoor) boxDoor.clone();
 		boxDoor.move(roomA, roomB);
 		return boxDoor;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8ddfbaf42d1ebca7720760ee9866b5c7bb336fd4
 	}
 	@Override
 	public Door createDoor(Room roomA, Room roomB) {
