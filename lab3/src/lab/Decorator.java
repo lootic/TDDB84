@@ -42,10 +42,10 @@ class Decorator extends AbstractGraphics implements Renderer {
 
 	@Override
 	public void putBonus(AbstractList<Rectangle> bonus) {
+		decorated.putBonus(bonus);
 		for (Rectangle tempRect : bonus) {
 			decorateRectangle(tempRect);
 		}
-		decorated.putBonus(bonus);
 	}
 
 	@Override

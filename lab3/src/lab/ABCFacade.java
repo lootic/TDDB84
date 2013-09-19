@@ -37,6 +37,7 @@ public class ABCFacade extends AbstractGraphics implements Renderer {
 
 	@Override
 	public void stop() {
+		a.stop();
 	}
 
 	@Override

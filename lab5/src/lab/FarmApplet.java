@@ -12,9 +12,9 @@ import java.util.Vector;
 import javax.swing.JApplet;
 
 /**
- * This is the class that displays the farm of ladybird on the screen.
- * It does double buffering and can be used as an invoker.
- *
+ * This is the class that displays the farm of ladybird on the screen. It does
+ * double buffering and can be used as an invoker.
+ * 
  * @author Peter Sunnergren
  */
 public class FarmApplet extends JApplet implements MouseListener, KeyListener {
@@ -65,16 +65,17 @@ public class FarmApplet extends JApplet implements MouseListener, KeyListener {
 
 	private void undoCommand() {
 
-		if (commands.isEmpty()) return;
+		if (commands.isEmpty())
+			return;
 
 		commands.lastElement().Unexecute();
 		commands.removeElement(commands.lastElement());
 	}
 
 	/**
-	 * If the mouse is clicked on a ladybird, the ladybird gets selected.
-	 * If the mouse is clicked on the canvas, and there is a ladybird
-	 * selected, the ladybird move to the clicked position.
+	 * If the mouse is clicked on a ladybird, the ladybird gets selected. If the
+	 * mouse is clicked on the canvas, and there is a ladybird selected, the
+	 * ladybird move to the clicked position.
 	 */
 	public void mousePressed(MouseEvent evt) {
 
@@ -86,9 +87,8 @@ public class FarmApplet extends JApplet implements MouseListener, KeyListener {
 			if (manager.isLadyBirdAt(evt.getX(), evt.getY())) {
 				manager.markLadyBirdAt(evt.getX(), evt.getY());
 			} else {
-				// YOUR CODE HERE
-				// Write the code to move the marked ladybird.
-				// END OF YOUR CODE
+				LadyBirdManager.instance().getMarkedLadyBird().setGoal(
+						evt.getX(), evt.getY());
 			}
 		}
 
@@ -99,17 +99,13 @@ public class FarmApplet extends JApplet implements MouseListener, KeyListener {
 	 * Creates commands depending on which key was pressed.
 	 */
 	public void keyPressed(KeyEvent evt) {
-
 		switch (evt.getKeyChar()) {
 		case 'a':
+			addCommand(S_CommandFactory.createAddCommand());
 			break;
-
 		case 'r':
-			// YOUR CODE HERE
-			// Write the code to remove the marked ladybird.
-			// END OF YOUR CODE
+			addCommand(S_CommandFactory.createRemoveCommand());
 			break;
-
 		case 'b':
 			// YOUR CODE HERE
 			// Write the code to make the marked ladybird bigger.
@@ -129,9 +125,7 @@ public class FarmApplet extends JApplet implements MouseListener, KeyListener {
 			break;
 
 		case 'u':
-			// YOUR CODE HERE
-			// Write the code to undo the last command.
-			// END OF YOUR CODE
+			undoCommand();
 			break;
 		}
 

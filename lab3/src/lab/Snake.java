@@ -228,7 +228,7 @@ public class Snake implements Runnable {
 
 		// YOUR CODE HERE
 		// Create the new renderer.
-		renderer = new Decorator(renderer);		
+		renderer = new Decorator(renderer);	
 		// Initialize the color of the snake.
 		renderer.setSnakeColor(Color.PINK);
 		// Otherwise, it is null and you'll get a NullPointerException.

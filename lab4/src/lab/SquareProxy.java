@@ -44,6 +44,8 @@ public class SquareProxy extends AbstractSquare {
 				open = false;
 				shape = this;
 			}
+			//TODO
+			//mark shape inside proxy
 		}
 
 		return shape;
@@ -55,6 +57,8 @@ public class SquareProxy extends AbstractSquare {
 	public void paint(Graphics g) {
 
 		if (open) {
+			//TODO
+			//draw realSquare, should not be orange
 			g.setColor(Color.orange);
 			g.fillRect(getX(), getY(), getWidth(), getHeight());
 			paintChildren(g);
