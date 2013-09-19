@@ -183,12 +183,6 @@ public class StablePanel extends JPanel {
 	/**
 	 * Construction using prototypes.
 	 */
-<<<<<<< HEAD
-	
-							
-=======
-
->>>>>>> 8ddfbaf42d1ebca7720760ee9866b5c7bb336fd4
 	public void prototypeConstruction() {
 		S_Blueprints.STABLE_3x3.construct(new S_Prototype());
 	}
