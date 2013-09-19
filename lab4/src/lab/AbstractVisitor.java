@@ -11,7 +11,7 @@ public abstract class AbstractVisitor
 {
 
 	protected int numberOfVisits = 0;
-	protected Graphics g;
+	protected Graphics g; //this okay?
 
 	/**
 	 * Visits a square.

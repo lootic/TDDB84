@@ -117,8 +117,6 @@ public class StablePanel extends JPanel {
 	 * Construction using the Builder pattern.
 	 */
 	public void builderConstruction() {
-<<<<<<< HEAD
-=======
 		S_Builder builder = new S_Builder(Stable.instance());
 		builder.addRoom(0, 0);
 		builder.addRoom(0, 1);
@@ -180,24 +178,15 @@ public class StablePanel extends JPanel {
 		builder.setCorridor(1, 1, KeyEvent.VK_RIGHT);
 		
 		builder.createResult();
->>>>>>> fa0e003f130c8ca9a08d696639f2a312632272dd
 	}
 
 	/**
 	 * Construction using prototypes.
 	 */
-<<<<<<< HEAD
-	
-	public void prototypeConstruction()
-	{
-		Stable stable = Stable.instance();
-							
-=======
+
 	public void prototypeConstruction() {
 		S_Blueprints.STABLE_3x3.construct(new S_Prototype());
->>>>>>> fa0e003f130c8ca9a08d696639f2a312632272dd
 	}
-
 
 	public void deconstruct() {
 		Iterator<Horse> iterator = horses.iterator();

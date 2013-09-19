@@ -57,7 +57,7 @@ public class SquareProxy extends AbstractSquare {
 		if (open) {
 			g.setColor(Color.orange);
 			g.fillRect(getX(), getY(), getWidth(), getHeight());
-			paintChildren(g); // added
+			paintChildren(g);
 		} else {
 			g.setColor(Color.black);
 			g.fillRect(getX(), getY(), getWidth(), getHeight());
@@ -80,7 +80,7 @@ public class SquareProxy extends AbstractSquare {
 		if (open) { // added
 			list.add(this);
 			realSquare.getListOfShapes(list); // added
-			list.remove(realSquare);			
+			list.remove(realSquare);
 			return list;
 		} else { // added
 			list.add(this); // added
@@ -92,7 +92,15 @@ public class SquareProxy extends AbstractSquare {
 	 * Accepts a Visitor.
 	 */
 	public void accept(AbstractVisitor v) {
-		v.visit(this); // added
+		// added
+		v.visit(this);
+		if (hasChildren()) {
+			AbstractShape shape = realSquare.getLastChild();
+			while (shape != null) {
+				shape.accept(v);
+				shape = shape.getSibling();
+			}
+		}
 	}
 
 	/**
@@ -106,7 +114,7 @@ public class SquareProxy extends AbstractSquare {
 	 * Used to check if there are any children.
 	 */
 	public boolean hasChildren() {
-		 return open ? realSquare.hasChildren() : false;
+		return open ? realSquare.hasChildren() : false;
 	}
 
 	/**

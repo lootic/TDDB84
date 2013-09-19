@@ -43,13 +43,13 @@ public class ShapePanel extends JPanel {
 
 		super.paint(g);
 
+		currentGraphics = g;
 		if (AbstractShape.paintChildren) {
 			root.paint(g);
 		} else if (paintVisitor) {
-			visitor.setGraphics(g);
+			visitor.setGraphics(currentGraphics);
 			applyVisitor();
 		} else if (paintIterator) {
-			currentGraphics = g;
 			applyIterator();
 		}
 
