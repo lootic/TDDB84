@@ -15,7 +15,7 @@ import javax.swing.JApplet;
  * 
  * @author Peter Sunnergren
  */
-public class LadyBirdManager extends Thread {
+public class LadyBirdManager extends Thread implements S_Observer {
 
 	private Vector<LadyBird> ladyBirds;
 	private LadyBird markedLadyBird;
@@ -53,40 +53,42 @@ public class LadyBirdManager extends Thread {
 	 *            The applet.
 	 */
 	public static void setApplet(JApplet a) {
-
 		applet = a;
 	}
 
+	/*
+	 * Made some changes to speed up the program a little, we now only sleep
+	 * when there is nothing to calculate.
+	 */
 	/**
-	 * The thread that periodically repaints the farm. Made some changes to
-	 * speed up the program a little, we now only sleep when there is nothing to
-	 * calculate
+	 * The thread that periodically repaints the farm.
 	 */
 	public void run() {
-		long i;
+		long sleepDuration;
 		while (true) {
-
-			i = System.currentTimeMillis(); // added
-			
+			sleepDuration = System.currentTimeMillis(); // added
 			Iterator<LadyBird> iterator = ladyBirds.iterator();
-			
+
 			while (iterator.hasNext()) {
 				LadyBird bird = iterator.next();
 				bird.nextAction();
 			}
-			handleCollisions();
-			
+
+			handleCollisions(); // added
+
 			applet.repaint();
-			i = System.currentTimeMillis() - i; // added
+			sleepDuration = 100 - System.currentTimeMillis() + sleepDuration; // added
 			try {
-				Thread.sleep(100 - i);
+				if (sleepDuration > 0) {
+					Thread.sleep(sleepDuration);
+				}
 			} catch (InterruptedException e) {
 				System.out.println("Interrupted.");
 			}
 		}
 	}
 
-	protected void handleCollisions() {
+	protected synchronized void handleCollisions() {
 		for (LadyBird bird : ladyBirds)
 			for (LadyBird otherBird : ladyBirds) {
 				if (bird.equals(otherBird)) {
@@ -106,10 +108,6 @@ public class LadyBirdManager extends Thread {
 		LadyBird bird = new LadyBird();
 		ladyBirds.add(bird);
 
-		// YOUR CODE HERE
-		// Add the code to remove overlaps at creation.
-		// END OF YOUR CODE
-
 		return bird;
 	}
 
@@ -122,20 +120,13 @@ public class LadyBirdManager extends Thread {
 
 		if (markedLadyBird == bird)
 			markedLadyBird = null;
-
-		// YOUR CODE HERE
-		// Add some code if needed.
 	}
 
 	/**
 	 * Adds a ladybird to the farm.
 	 */
 	public void addLadyBird(LadyBird bird) {
-
 		ladyBirds.add(bird);
-
-		// YOUR CODE HERE
-		// Add some code if needed.
 	}
 
 	/**
@@ -201,7 +192,6 @@ public class LadyBirdManager extends Thread {
 	 * Draws the ladybirds and a white border around the marked ladybird.
 	 */
 	public void paint(Graphics g) {
-
 		Iterator<LadyBird> iter = ladyBirds.iterator();
 		while (iter.hasNext())
 			iter.next().paint(g);
@@ -216,5 +206,12 @@ public class LadyBirdManager extends Thread {
 				markedLadyBird.getY() - markedLadyBird.getSize() + 1,
 				2 * markedLadyBird.getSize() - 1,
 				2 * markedLadyBird.getSize() - 1);
+	}
+
+	@Override
+	public void settingsChanged(LadyBirdSettings newSettings) {
+		for (LadyBird ladyBird : ladyBirds) {
+			ladyBird.setSettings(newSettings);
+		}
 	}
 }

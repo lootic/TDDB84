@@ -5,7 +5,7 @@ import java.awt.geom.Point2D;
 
 /**
  * Contains the settings of a ladybird.
- *
+ * 
  * @author Peter Sunnergren
  */
 public class LadyBirdSettings {
@@ -19,25 +19,27 @@ public class LadyBirdSettings {
 
 	/**
 	 * Calculates and sets values depending on the input.
-	 *
-	 * @param halfLadyBirdSize The radius of the ladybird.
-	 * @param color The body color.
-	 * @param dotColor The color of the dots and lines.
+	 * 
+	 * @param halfLadyBirdSize
+	 *            The radius of the ladybird.
+	 * @param color
+	 *            The body color.
+	 * @param dotColor
+	 *            The color of the dots and lines.
 	 */
-	public LadyBirdSettings(int halfLadyBirdSize,
-		Color color, Color dotColor) {
+	public LadyBirdSettings(int halfLadyBirdSize, Color color, Color dotColor) {
 
 		this.halfLadyBirdSize = halfLadyBirdSize;
 		this.numberOfDots = halfLadyBirdSize / 10;
-		this.halfSizeOfSpot = (int)(Math.round(Point2D.distance(
-			(halfLadyBirdSize / 1.5) *
-				Math.cos(Math.PI / (numberOfDots + 1)),
-			(halfLadyBirdSize / 1.5) *
-				Math.sin(Math.PI / (numberOfDots + 1)),
-			(halfLadyBirdSize / 1.5) *
-				Math.cos(Math.PI / (numberOfDots + 1) * 2),
-			(halfLadyBirdSize / 1.5) *
-				Math.sin(Math.PI / (numberOfDots + 1) * 2))) / 2.2);
+		this.halfSizeOfSpot = (int) (Math.round(Point2D.distance(
+				(halfLadyBirdSize / 1.5)
+						* Math.cos(Math.PI / (numberOfDots + 1)),
+				(halfLadyBirdSize / 1.5)
+						* Math.sin(Math.PI / (numberOfDots + 1)),
+				(halfLadyBirdSize / 1.5)
+						* Math.cos(Math.PI / (numberOfDots + 1) * 2),
+				(halfLadyBirdSize / 1.5)
+						* Math.sin(Math.PI / (numberOfDots + 1) * 2))) / 2.2);
 		this.stepSize = halfLadyBirdSize / 3;
 		this.color = color;
 		this.dotColor = dotColor;
@@ -45,8 +47,7 @@ public class LadyBirdSettings {
 
 	public LadyBirdSettings(LadyBirdSettings settings) {
 
-		this(settings.halfLadyBirdSize,
-			settings.color, settings.dotColor);
+		this(settings.halfLadyBirdSize, settings.color, settings.dotColor);
 	}
 
 	/**

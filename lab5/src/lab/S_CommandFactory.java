@@ -19,6 +19,7 @@ public class S_CommandFactory {
 				bird.setColors(getRandomColor(), getRandomColor());
 				bird.setSize(getRandomBodySize());
 				LadyBirdManager.instance().addLadyBird(bird);
+				bird.addSettingsObserver(LadyBirdManager.instance());
 			}
 
 			@Override
