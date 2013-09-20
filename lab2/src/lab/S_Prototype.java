@@ -1,5 +1,10 @@
 package lab;
 
+/**
+ *  
+ * This is  Prototype class that implements S_Creator(AbstractFactory)
+ *
+ */
 public class S_Prototype implements S_Creator {
 	private Room room = new Room(0, 0);
 	private Door door = new Door(room, room);

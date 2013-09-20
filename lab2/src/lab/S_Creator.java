@@ -1,5 +1,10 @@
 package lab;
 
+
+/**
+ * This interface is a Abstract_Factory that
+ * our Prototype and factory will implementww
+ */
 public interface S_Creator {
 	public Room createRoom(int x, int y);
 
