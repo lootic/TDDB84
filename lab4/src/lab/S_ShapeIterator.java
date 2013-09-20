@@ -11,12 +11,7 @@ public class S_ShapeIterator extends AbstractIterator {
 
 	S_ShapeIterator(AbstractSquare root) {
 		this.list = root.getListOfShapes(new ArrayList<AbstractShape>());
-		this.iterator = list.iterator();	
-		if (iterator.hasNext()) {
-			current = iterator.next();
-		} else {
-			current = null;
-		}
+		first();
 	}
 
 	@Override
