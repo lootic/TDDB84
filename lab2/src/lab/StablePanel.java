@@ -53,8 +53,8 @@ public class StablePanel extends JPanel {
 	/**
 	 * This is called when the user presses 'h' and adds another horse.
 	 */
-	public void addHorse(StableApplet a) {
-
+	public void addHorse(StableApplet a)
+	{
 		Horse horse1 = new Horse(a);
 		horses.add(horse1);
 		new Thread(horse1).start();
@@ -106,18 +106,30 @@ public class StablePanel extends JPanel {
 		room4.setSide(boxDoor34);
 	}
 
+	
+	
+	
 	/**
 	 * Construction is made using an Factory.
 	 */
-	public void factoryConstruction() {
+	public void factoryConstruction()
+	{
 		S_Blueprints.STABLE_3x3.construct(new S_Factory());
 	}
 
+	
+	public S_Builder createBuilder()
+	{
+		return new S_Builder(Stable.instance());
+	}
+	
+	
 	/**
 	 * Construction using the Builder pattern.
 	 */
 	public void builderConstruction() {
-		S_Builder builder = new S_Builder(Stable.instance());
+		S_Builder builder = createBuilder();
+		
 		builder.addRoom(0, 0);
 		builder.addRoom(0, 1);
 		builder.addRoom(0, 2);

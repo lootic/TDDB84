@@ -1,9 +1,24 @@
 package lab;
 
+
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+
+/**
+ * 
+ * This is the builder class that has the methods
+ * that you can use for populating a instance of a stable.
+ * 
+ * To make the builder fully declarative and not dependant
+ * on the creation order of components it stores rooms and
+ * sides internally and connects everything first when
+ * createResult() is called. We do this by using the run
+ * as a way to save code as variables, in a way similar
+ * to functional programming.
+ * 
+ */
 public class S_Builder {
 	private Stable stable;
 	private HashMap<String, Room> rooms = new HashMap<String, Room>();
