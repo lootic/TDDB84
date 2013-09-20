@@ -11,6 +11,6 @@ public class NullState extends AbstractState {
 	 * Takes no action.
 	 */
 	public void nextAction(LadyBird bird) {
-
+		
 	}
 }

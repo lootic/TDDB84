@@ -87,8 +87,9 @@ public class FarmApplet extends JApplet implements MouseListener, KeyListener {
 			if (manager.isLadyBirdAt(evt.getX(), evt.getY())) {
 				manager.markLadyBirdAt(evt.getX(), evt.getY());
 			} else {
-				LadyBirdManager.instance().getMarkedLadyBird().setGoal(
-						evt.getX(), evt.getY());
+				LadyBird bird = LadyBirdManager.instance().getMarkedLadyBird();
+				bird.setGoal(evt.getX(), evt.getY());
+				bird.setState(S_States.TURN_STATE);
 			}
 		}
 

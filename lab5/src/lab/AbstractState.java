@@ -2,7 +2,7 @@ package lab;
 
 /**
  * The superclass for all states.
- *
+ * 
  * @author Peter Sunnergren
  */
 public abstract class AbstractState {
@@ -13,7 +13,6 @@ public abstract class AbstractState {
 	 * Sets the state that should be attained after this one.
 	 */
 	public void setNextState(AbstractState state) {
-
 		nextState = state;
 	}
 
