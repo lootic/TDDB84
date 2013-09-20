@@ -23,7 +23,6 @@ public class LadyBirdManager extends Thread {
 	private static LadyBirdManager instance;
 
 	private LadyBirdManager() {
-
 		ladyBirds = new Vector<LadyBird>();
 	}
 
@@ -68,19 +67,15 @@ public class LadyBirdManager extends Thread {
 		while (true) {
 
 			i = System.currentTimeMillis(); // added
+			
 			Iterator<LadyBird> iterator = ladyBirds.iterator();
+			
 			while (iterator.hasNext()) {
 				LadyBird bird = iterator.next();
 				bird.nextAction();
-				//handleCollisions
-				for (LadyBird otherBird : ladyBirds) {
-					if (bird.equals(otherBird)) {
-						continue;
-					}
-					bird.collide(otherBird);
-				}
 			}
-
+			handleCollisions();
+			
 			applet.repaint();
 			i = System.currentTimeMillis() - i; // added
 			try {
@@ -89,6 +84,16 @@ public class LadyBirdManager extends Thread {
 				System.out.println("Interrupted.");
 			}
 		}
+	}
+
+	protected void handleCollisions() {
+		for (LadyBird bird : ladyBirds)
+			for (LadyBird otherBird : ladyBirds) {
+				if (bird.equals(otherBird)) {
+					continue;
+				}
+				bird.collide(otherBird);
+			}
 	}
 
 	/**
