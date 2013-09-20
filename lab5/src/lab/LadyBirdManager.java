@@ -91,6 +91,10 @@ public class LadyBirdManager extends Thread {
 		// YOUR CODE HERE
 		// Add the code to remove overlaps at creation.
 		// END OF YOUR CODE
+		
+		for(LadyBird bird : ladyBirds) {
+			
+		}
 
 		return bird;
 	}

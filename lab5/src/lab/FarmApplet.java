@@ -107,23 +107,14 @@ public class FarmApplet extends JApplet implements MouseListener, KeyListener {
 			addCommand(S_CommandFactory.createRemoveCommand());
 			break;
 		case 'b':
-			// YOUR CODE HERE
-			// Write the code to make the marked ladybird bigger.
-			// END OF YOUR CODE
+			addCommand(S_CommandFactory.createBiggerCommand());
 			break;
-
 		case 's':
-			// YOUR CODE HERE
-			// Write the code to make the marked ladybird smaller.
-			// END OF YOUR CODE
+			addCommand(S_CommandFactory.createSmallerCommand());
 			break;
-
 		case 'c':
-			// YOUR CODE HERE
-			// Write the code to change to the color of the marked ladybird.
-			// END OF YOUR CODE
+			addCommand(S_CommandFactory.createColorCommand());
 			break;
-
 		case 'u':
 			undoCommand();
 			break;
