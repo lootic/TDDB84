@@ -88,14 +88,15 @@ public class LadyBirdManager extends Thread implements S_Observer {
 		}
 	}
 
+	/**
+	 * O((n^2+n)/2)
+	 */
 	protected synchronized void handleCollisions() {
-		for (LadyBird bird : ladyBirds)
-			for (LadyBird otherBird : ladyBirds) {
-				if (bird.equals(otherBird)) {
-					continue;
-				}
-				bird.collide(otherBird);
+		for (int i = 0; i < ladyBirds.size(); ++i) {
+			for (int j = i + 1; j < ladyBirds.size(); ++j) {
+				ladyBirds.get(i).collide(ladyBirds.get(j));
 			}
+		}
 	}
 
 	/**
