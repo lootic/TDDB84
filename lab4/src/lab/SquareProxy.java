@@ -17,6 +17,8 @@ public class SquareProxy extends AbstractSquare {
 
 	private void createRealSquare() {
 		realSquare = new Square();
+		System.out.println(this.getDepth());
+		realSquare.setDepth(this.getDepth()+1);
 	}
 
 	public SquareProxy() {
@@ -40,12 +42,11 @@ public class SquareProxy extends AbstractSquare {
 			open = true;
 			shape = this;
 		} else {
+			shape = realSquare.getMarkedShape(cx, cy);
 			if (shape == null) {
 				open = false;
 				shape = this;
 			}
-			//TODO
-			//mark shape inside proxy
 		}
 
 		return shape;
@@ -57,11 +58,7 @@ public class SquareProxy extends AbstractSquare {
 	public void paint(Graphics g) {
 
 		if (open) {
-			//TODO
-			//draw realSquare, should not be orange
-			g.setColor(Color.orange);
-			g.fillRect(getX(), getY(), getWidth(), getHeight());
-			paintChildren(g);
+			realSquare.paint(g);
 		} else {
 			g.setColor(Color.black);
 			g.fillRect(getX(), getY(), getWidth(), getHeight());
@@ -81,14 +78,11 @@ public class SquareProxy extends AbstractSquare {
 	 */
 	public AbstractList<AbstractShape> getListOfShapes(
 			AbstractList<AbstractShape> list) {
-		if (open) { // added
+		if (open) {
+			return realSquare.getListOfShapes(list);
+		} else {
 			list.add(this);
-			realSquare.getListOfShapes(list); // added
-			list.remove(realSquare);
 			return list;
-		} else { // added
-			list.add(this); // added
-			return list; // added
 		}
 	}
 
@@ -96,14 +90,10 @@ public class SquareProxy extends AbstractSquare {
 	 * Accepts a Visitor.
 	 */
 	public void accept(AbstractVisitor v) {
-		// added
-		v.visit(this);
-		if (hasChildren()) {
-			AbstractShape shape = realSquare.getLastChild();
-			while (shape != null) {
-				shape.accept(v);
-				shape = shape.getSibling();
-			}
+		if (open) {
+			realSquare.accept(v);
+		} else {
+			v.visit(this);
 		}
 	}
 
