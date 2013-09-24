@@ -15,10 +15,9 @@ public class S_CommandFactory {
 
 			@Override
 			public void Execute() {
-				bird = new LadyBird();
+				bird = 	LadyBirdManager.instance().createLadyBird();
 				bird.setColors(getRandomColor(), getRandomColor());
 				bird.setSize(getRandomBodySize());
-				LadyBirdManager.instance().addLadyBird(bird);
 				bird.addSettingsObserver(LadyBirdManager.instance());
 			}
 

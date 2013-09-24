@@ -17,8 +17,6 @@ public class SquareProxy extends AbstractSquare {
 
 	private void createRealSquare() {
 		realSquare = new Square();
-		System.out.println(this.getDepth());
-		realSquare.setDepth(this.getDepth()+1);
 	}
 
 	public SquareProxy() {
@@ -69,7 +67,9 @@ public class SquareProxy extends AbstractSquare {
 	 * Draws the children of the proxy.
 	 */
 	public void paintChildren(Graphics g) {
-		realSquare.paintChildren(g);
+		if (hasChildren()) {
+			realSquare.paintChildren(g);
+		}
 	}
 
 	/**
@@ -119,5 +119,15 @@ public class SquareProxy extends AbstractSquare {
 			throw new NoSuchElementException();
 		}
 		return realSquare.getLastChild();
+	}
+	
+	@Override
+	public int getDepth(){
+		return realSquare.getDepth();
+	}
+	
+	@Override
+	public void setDepth(int depth){
+		realSquare.setDepth(depth);
 	}
 }

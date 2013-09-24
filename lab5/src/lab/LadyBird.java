@@ -12,8 +12,10 @@ import java.util.ArrayList;
  * 
  * @author Peter Sunnergren
  */
-public class LadyBird implements S_Observable{
+public class LadyBird implements S_Observable, S_Colleague {
 
+	@SuppressWarnings("unused")
+	private S_Mediator mediator;
 	private double angle = 0.0;
 	private int x;
 	private int y;
@@ -33,7 +35,7 @@ public class LadyBird implements S_Observable{
 		angle = Math.round(Math.random() * 2 * Math.PI);
 		state = new NullState();
 	}
-	
+
 	/**
 	 * Makes the ladybird take the next action depending on which state it is
 	 * in.
@@ -301,10 +303,15 @@ public class LadyBird implements S_Observable{
 	public void addSettingsObserver(S_Observer s) {
 		this.observers.add(s);
 	}
-	
-	private void fireChange(){
-		for(S_Observer o : this.observers) {
+
+	private void fireChange() {
+		for (S_Observer o : this.observers) {
 			o.settingsChanged(settings);
 		}
+	}
+
+	@Override
+	public void setMediator(S_Mediator mediator) {
+		this.mediator = mediator;
 	}
 }

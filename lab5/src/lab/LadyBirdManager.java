@@ -21,8 +21,10 @@ public class LadyBirdManager extends Thread implements S_Observer {
 	private LadyBird markedLadyBird;
 	private static JApplet applet;
 	private static LadyBirdManager instance;
+	private S_Mediator mediator;
 
 	private LadyBirdManager() {
+		mediator = new S_Mediator();
 		ladyBirds = new Vector<LadyBird>();
 	}
 
@@ -74,7 +76,7 @@ public class LadyBirdManager extends Thread implements S_Observer {
 				bird.nextAction();
 			}
 
-			handleCollisions(); // added
+			mediator.handleCollisions();
 
 			applet.repaint();
 			sleepDuration = 100 - System.currentTimeMillis() + sleepDuration; // added
@@ -89,17 +91,6 @@ public class LadyBirdManager extends Thread implements S_Observer {
 	}
 
 	/**
-	 * O((n^2+n)/2)
-	 */
-	protected synchronized void handleCollisions() {
-		for (int i = 0; i < ladyBirds.size(); ++i) {
-			for (int j = i + 1; j < ladyBirds.size(); ++j) {
-				ladyBirds.get(i).collide(ladyBirds.get(j));
-			}
-		}
-	}
-
-	/**
 	 * Creates a ladybird.
 	 * 
 	 * @return The new ladybird so it can be saved outside the manager.
@@ -108,6 +99,7 @@ public class LadyBirdManager extends Thread implements S_Observer {
 
 		LadyBird bird = new LadyBird();
 		ladyBirds.add(bird);
+		mediator.registerLadyBird(bird);
 
 		return bird;
 	}

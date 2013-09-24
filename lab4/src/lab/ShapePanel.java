@@ -47,7 +47,6 @@ public class ShapePanel extends JPanel {
 		if (AbstractShape.paintChildren) {
 			root.paint(g);
 		} else if (paintVisitor) {
-			visitor.setGraphics(currentGraphics);
 			applyVisitor();
 		} else if (paintIterator) {
 			applyIterator();
@@ -93,6 +92,7 @@ public class ShapePanel extends JPanel {
 	 * Applies the Visitor to the root shape.
 	 */
 	public void applyVisitor() {
+		visitor.setGraphics(currentGraphics);
 		root.accept(visitor);
 
 		ShapeApplet.setOutputText("Number of shapes: "
